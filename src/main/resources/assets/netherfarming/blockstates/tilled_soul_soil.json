@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=1": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=2": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=3": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=4": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=5": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=6": {
+      "model": "netherfarming:block/tilled_soul_soil"
+    },
+    "moisture=7": {
+      "model": "netherfarming:block/tilled_soul_soil_moist"
+    }
+  }
+}

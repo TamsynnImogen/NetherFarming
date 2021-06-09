@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {"item": "netherfarming:cinder_wheat"}
+  ],
+
+  "result":
+  {
+    "item": "netherfarming:cinder_wheat_seeds",
+    "count": 2
+  }
+
+}

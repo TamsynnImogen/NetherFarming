@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC"
+  ],
+  "key": {
+    "C": {
+      "item": "netherfarming:cinder_wheat"
+    }
+  },
+  "result": {
+    "item": "netherfarming:cinder_wheat_dough"
+  }
+}

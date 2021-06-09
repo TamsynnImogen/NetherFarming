@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {"item": "netherfarming:cinder_wheat_dough"},
+  "result": "netherfarming:cinder_bread",
+  "experience": 0.35,
+  "cookingtime": 200
+
+}

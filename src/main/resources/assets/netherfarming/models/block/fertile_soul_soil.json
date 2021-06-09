@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "netherfarming:block/fertile_soul_soil"
+  }
+}

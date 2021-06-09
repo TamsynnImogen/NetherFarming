@@ -1,0 +1,15 @@
+{
+  "item.netherfarming.nether_farming_icon": "Nether Farming Icon",
+  "itemGroup.creativeTab": "Nether Farming",
+
+  //Items
+  "item.netherfarming.glowberry": "Glowberry",
+  "item.netherfarming.cinder_bread": "Cinder Bread",
+  "item.netherfarming.cinder_wheat": "Cinder Wheat",
+  "item.netherfarming.cinder_wheat_dough": "Cinder Wheat Dough",
+
+  //Blocks
+  "block.netherfarming.fertile_soul_soil": "Fertile Soul Soil",
+  "block.netherfarming.tilled_soul_soil": "Tilled Soul Soil",
+  "block.netherfarming.cinder_wheat_crop": "Cinder Wheat Seeds"
+}
