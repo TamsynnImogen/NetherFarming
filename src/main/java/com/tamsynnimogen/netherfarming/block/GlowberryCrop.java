@@ -14,7 +14,6 @@ import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -124,7 +123,11 @@ public class GlowberryCrop extends BushBlock implements IGrowable {
         BlockState state = worldIn.getBlockState(pos.down());
         Block block = state.getBlock();
 
-        if (block.equals(ModBlocks.Tilled_Soul_Soil.get()))
+        if (block.equals(ModBlocks.TILLED_SOUL_SOIL.get()))
+        {
+            return true;
+        }
+        else if (block.equals(ModBlocks.FERTILE_SOUL_SOIL.get()))
         {
             return true;
         }

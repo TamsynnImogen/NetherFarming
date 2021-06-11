@@ -3,13 +3,11 @@ package com.tamsynnimogen.netherfarming.block;
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
 import com.tamsynnimogen.netherfarming.util.Registration;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.world.gen.feature.AbstractFeatureSizeType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -18,11 +16,11 @@ import java.util.function.Supplier;
 public class ModBlocks
 {
 
-    public static final RegistryObject<Block> Tilled_Soul_Soil = register("tilled_soul_soil",
+    public static final RegistryObject<Block> TILLED_SOUL_SOIL = register("tilled_soul_soil",
             () -> new NetherFarmland(AbstractBlock.Properties.from(Blocks.FARMLAND)));
 
     public static final RegistryObject<Block> FERTILE_SOUL_SOIL = register("fertile_soul_soil",
-            ()-> new ModTilledBlock(Tilled_Soul_Soil.get().getDefaultState(),
+            ()-> new ModTilledBlock(TILLED_SOUL_SOIL.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.EARTH)
                             .hardnessAndResistance(0.5f,0.5f)
                             .harvestTool(ToolType.HOE)

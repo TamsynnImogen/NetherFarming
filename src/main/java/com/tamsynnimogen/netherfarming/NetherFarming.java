@@ -1,6 +1,7 @@
 package com.tamsynnimogen.netherfarming;
 
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
+import com.tamsynnimogen.netherfarming.events.ModEvents;
 import com.tamsynnimogen.netherfarming.item.ModItems;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
@@ -47,6 +48,8 @@ public class NetherFarming
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+        // register mod events
+        MinecraftForge.EVENT_BUS.register(new ModEvents());
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

@@ -44,7 +44,7 @@ public class CinderWheatCrop extends CropsBlock
         BlockState state = worldIn.getBlockState(pos.down());
         Block block = state.getBlock();
 
-        if (block.equals(ModBlocks.Tilled_Soul_Soil.get()))
+        if (block.equals(ModBlocks.TILLED_SOUL_SOIL.get()))
         {
             return true;
         }
