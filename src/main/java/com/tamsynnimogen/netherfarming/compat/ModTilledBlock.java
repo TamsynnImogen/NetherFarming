@@ -4,7 +4,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -15,12 +17,5 @@ public class ModTilledBlock extends RotatedPillarBlock {
     public ModTilledBlock(BlockState state, Properties properties) {
         super(properties);
         this.tilled = state;
-    }
-
-
-    @Override
-    @Nullable
-    public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
-        return toolType == ToolType.HOE ? tilled : null;
     }
 }

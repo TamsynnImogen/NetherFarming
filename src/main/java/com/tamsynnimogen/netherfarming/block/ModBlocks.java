@@ -5,7 +5,6 @@ import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
@@ -32,9 +31,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> GLOWBERRY_CROP =
             Registration.BLOCKS.register("glowberry_crop",
-                    () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 7;})));
-
-    // Helper functions to register block items
+                    () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
 
     public static void register() { }
 

@@ -30,12 +30,6 @@ public class NetherFarmland extends Block
         this.setDefaultState(this.stateContainer.getBaseState().with(MOISTURE, Integer.valueOf(0)));
     }
 
-    /**
-     * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-     * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-     * returns its solidified counterpart.
-     * Note that this method should ideally consider only the specific face passed in.
-     */
     public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
         if (facing == Direction.UP && !stateIn.isValidPosition(worldIn, currentPos)) {
             worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
@@ -68,9 +62,6 @@ public class NetherFarmland extends Block
 
     }
 
-    /**
-     * Performs a random tick on a block.
-     */
     public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
         int i = state.get(MOISTURE);
         if (!hasWater(worldIn, pos) && !worldIn.isRainingAt(pos.up())) {
@@ -85,9 +76,6 @@ public class NetherFarmland extends Block
 
     }
 
-    /**
-     * Block's chance to react to a living entity falling on it.
-     */
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
         if (!worldIn.isRemote && net.minecraftforge.common.ForgeHooks.onFarmlandTrample(worldIn, pos, Blocks.SOUL_SOIL.getDefaultState(), fallDistance, entityIn)) { // Forge: Move logic to Entity#canTrample
             turnToDirt(worldIn.getBlockState(pos), worldIn, pos);
