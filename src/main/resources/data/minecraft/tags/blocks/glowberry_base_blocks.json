@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
+    "netherfarming:fertile_soul_soil",
+    "netherfarming:tilled_soul_soil"
+  ]
+}

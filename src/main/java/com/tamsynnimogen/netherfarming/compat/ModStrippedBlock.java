@@ -10,17 +10,16 @@ import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 
-public class ModTilledBlock extends RotatedPillarBlock {
-    private final BlockState tilled;
-    public ModTilledBlock(BlockState state, Properties properties) {
+public class ModStrippedBlock extends RotatedPillarBlock {
+    private final BlockState stripped;
+    public ModStrippedBlock(BlockState state, Properties properties) {
         super(properties);
-        this.tilled = state;
+        this.stripped = state;
     }
-
 
     @Override
     @Nullable
     public BlockState getToolModifiedState(BlockState state, World world, BlockPos pos, PlayerEntity player, ItemStack stack, ToolType toolType) {
-        return toolType == ToolType.HOE ? tilled : null;
+        return toolType == ToolType.AXE ? stripped.with(AXIS, state.get(AXIS)) : null;
     }
 }

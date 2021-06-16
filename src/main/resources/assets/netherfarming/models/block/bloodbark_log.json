@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "netherfarming:block/bloodbark_log_top",
+    "side": "netherfarming:block/bloodbark_log"
+  }
+}

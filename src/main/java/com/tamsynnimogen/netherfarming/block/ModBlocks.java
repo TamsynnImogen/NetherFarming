@@ -1,10 +1,12 @@
 package com.tamsynnimogen.netherfarming.block;
 
 import com.tamsynnimogen.netherfarming.NetherFarming;
+import com.tamsynnimogen.netherfarming.compat.ModStrippedBlock;
 import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
@@ -24,6 +26,33 @@ public class ModBlocks
                             .hardnessAndResistance(0.5f,0.5f)
                             .harvestTool(ToolType.HOE)
                             .harvestLevel(0)));
+
+    public static final RegistryObject<Block> BLOODBARK_PLANK = register("bloodbark_planks",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> STRIPPED_BLOODBARK_LOG = register("stripped_bloodbark_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final RegistryObject<Block> BLOODBARK_LOG = register("bloodbark_log",
+            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_LOG.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.WOOD)
+                            .hardnessAndResistance(0.5f,2.0f)
+                            .harvestTool(ToolType.AXE)
+                            .harvestLevel(0)));
+
+    public static final RegistryObject<Block> BLOODBARK_LEAVES = register("bloodbark_leaves",
+            () -> new ModLeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
+/*
+       public static final RegistryObject<Block> BLOODBARK_SAPLING = register("bloodbark_sapling",
+               () -> new SaplingBlock(new BloodbarkTree(), AbstractBlock.Properties
+               .create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
+*/
+
+   public static final RegistryObject<Block> BLOODBARK_SAPLING = register("bloodbark_sapling",
+           () -> new ModFungusBlock(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.CYAN)
+                   .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
+               return ModFeatures.BLOODBARK_SAPLING_PLANTED;
+           }));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",

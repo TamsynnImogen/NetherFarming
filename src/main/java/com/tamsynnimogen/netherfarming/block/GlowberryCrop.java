@@ -106,4 +106,20 @@ public class GlowberryCrop extends BushBlock implements IGrowable
             return false;
         }
     }
+
+
+    /*
+public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+    return shouldLightSoulFire(worldIn.getBlockState(pos.down()).getBlock());
+}
+
+    public static boolean shouldLightSoulFire(Block block) {
+        return block.isIn(ModBlockTags.GLOWBERRY_BASE_BLOCKS);
+    }
+
+    protected boolean canBurn(BlockState state) {
+        return true;
+    }
+
+     */
 }

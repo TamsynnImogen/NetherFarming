@@ -3,7 +3,6 @@ package com.tamsynnimogen.netherfarming.item;
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
 import com.tamsynnimogen.netherfarming.util.Registration;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 
