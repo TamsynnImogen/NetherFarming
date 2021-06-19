@@ -11,5 +11,14 @@
   //Blocks
   "block.netherfarming.fertile_soul_soil": "Fertile Soul Soil",
   "block.netherfarming.tilled_soul_soil": "Tilled Soul Soil",
-  "block.netherfarming.cinder_wheat_crop": "Cinder Wheat Seeds"
+  "block.netherfarming.cinder_wheat_crop": "Cinder Wheat Seeds",
+  "block.netherfarming.bloodbark_button": "Bloodbark Button",
+  "block.netherfarming.bloodbark_door": "Bloodbark Door",
+  "block.netherfarming.bloodbark_leaves": "Bloodbark Leaves",
+  "block.netherfarming.bloodbark_log": "Bloodbark Log",
+  "block.netherfarming.bloodbark_planks": "Bloodbark Planks",
+  "block.netherfarming.bloodbark_sapling": "Bloodbark Sapling",
+  "block.netherfarming.bloodbark_slab": "Bloodbark Slab",
+  "block.netherfarming.bloodbark_stairs": "Bloodbark Stairs",
+  "block.netherfarming.stripped_bloodbark_log": "Stripped Bloodbark Log"
 }

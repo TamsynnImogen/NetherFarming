@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "netherfarming:block/bloodbark_slab"
+    },
+    "type=double": {
+      "model": "netherfarming:block/bloodbark_planks"
+    },
+    "type=top": {
+      "model": "netherfarming:block/bloodbark_slab_top"
+    }
+  }
+}

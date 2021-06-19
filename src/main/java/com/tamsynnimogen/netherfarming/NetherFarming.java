@@ -77,6 +77,7 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.GLOWBERRY_CROP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_LEAVES.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_DOOR.get(), RenderType.getCutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

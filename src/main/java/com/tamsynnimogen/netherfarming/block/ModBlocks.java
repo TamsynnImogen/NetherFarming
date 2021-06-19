@@ -27,8 +27,21 @@ public class ModBlocks
                             .harvestTool(ToolType.HOE)
                             .harvestLevel(0)));
 
-    public static final RegistryObject<Block> BLOODBARK_PLANK = register("bloodbark_planks",
+    public static final RegistryObject<Block> BLOODBARK_BUTTON =
+            register("bloodbark_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.WOOD)));
+
+    public static final RegistryObject<Block> BLOODBARK_DOOR =
+            register("bloodbark_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
+
+    public static final RegistryObject<Block> BLOODBARK_PLANKS = register("bloodbark_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> BLOODBARK_STAIRS =
+            register("bloodbark_stairs", () -> new StairsBlock(() -> ModBlocks.BLOODBARK_PLANKS.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.WOOD)));
+
+    public static final RegistryObject<Block> BLOODBARK_SLAB =
+            register("bloodbark_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.WOOD)));
 
     public static final RegistryObject<Block> STRIPPED_BLOODBARK_LOG = register("stripped_bloodbark_log",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));

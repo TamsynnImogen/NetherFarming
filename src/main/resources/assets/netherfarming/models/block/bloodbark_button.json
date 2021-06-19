@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "netherfarming:block/bloodbark_planks"
+  }
+}

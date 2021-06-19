@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "top": "netherfarming:block/bloodbark_door_top",
+    "bottom": "netherfarming:block/bloodbark_door_bottom"
+  }
+}
