@@ -33,9 +33,24 @@ public class ModBlocks
     public static final RegistryObject<Block> BLOODBARK_DOOR =
             register("bloodbark_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
+    public static final RegistryObject<Block> BLOODBARK_FENCE =
+            register("bloodbark_fence", () -> new FenceBlock(AbstractBlock.Properties.create(Material.WOOD)));
+
+    public static final RegistryObject<Block> BLOODBARK_FENCE_GATE =
+            register("bloodbark_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.WOOD)));
+
     public static final RegistryObject<Block> BLOODBARK_PLANKS = register("bloodbark_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 
+    public static final RegistryObject<Block> BLOODBARK_PRESSURE_PLATE =
+            register("bloodbark_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    AbstractBlock.Properties.create(Material.WOOD)));
+/*
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
+                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD),
+                    WoodType.DARK_OAK));
+*/
     public static final RegistryObject<Block> BLOODBARK_STAIRS =
             register("bloodbark_stairs", () -> new StairsBlock(() -> ModBlocks.BLOODBARK_PLANKS.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.WOOD)));
@@ -66,6 +81,20 @@ public class ModBlocks
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_SAPLING_PLANTED;
            }));
+/*
+    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
+            register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
+                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
+                    .lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
+*/
+public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
+        register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
+
+    public static final RegistryObject<Block> BLOODBARK_WOOD = register("bloodbark_wood",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_WOOD)));
+
+    public static final RegistryObject<Block> STRIPPED_BLOODBARK_WOOD = register("stripped_bloodbark_wood",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",

@@ -9,7 +9,7 @@
       "model": "netherfarming:block/bloodbark_log"
     },
     "axis=z": {
-      "model": "netherfarming:block/bloodbark_horizontal",
+      "model": "netherfarming:block/bloodbark_log_horizontal",
       "x": 90
     }
   }

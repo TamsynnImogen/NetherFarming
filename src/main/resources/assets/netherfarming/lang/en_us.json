@@ -14,11 +14,19 @@
   "block.netherfarming.cinder_wheat_crop": "Cinder Wheat Seeds",
   "block.netherfarming.bloodbark_button": "Bloodbark Button",
   "block.netherfarming.bloodbark_door": "Bloodbark Door",
+  "block.netherfarming.bloodbark_fence": "Bloodbark Fence",
+  "block.netherfarming.bloodbark_fence_gate": "Bloodbark Fence Gate",
   "block.netherfarming.bloodbark_leaves": "Bloodbark Leaves",
   "block.netherfarming.bloodbark_log": "Bloodbark Log",
   "block.netherfarming.bloodbark_planks": "Bloodbark Planks",
+  "block.netherfarming.bloodbark_pressure_plate": "Bloodbark Pressure Plate",
   "block.netherfarming.bloodbark_sapling": "Bloodbark Sapling",
+  "block.netherfarming.bloodbark_sign": "Bloodbark Sign",
   "block.netherfarming.bloodbark_slab": "Bloodbark Slab",
   "block.netherfarming.bloodbark_stairs": "Bloodbark Stairs",
-  "block.netherfarming.stripped_bloodbark_log": "Stripped Bloodbark Log"
+  "block.netherfarming.bloodbark_trapdoor": "Bloodbark Trapdoor",
+  "block.netherfarming.bloodbark_wall_sign": "Bloodbark Wall Sign",
+  "block.netherfarming.bloodbark_wood": "Bloodbark Wood",
+  "block.netherfarming.stripped_bloodbark_log": "Stripped Bloodbark Log",
+  "block.netherfarming.stripped_bloodbark_wood": "Stripped Bloodbark Wood"
 }
