@@ -2,6 +2,7 @@ package com.tamsynnimogen.netherfarming.util;
 
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

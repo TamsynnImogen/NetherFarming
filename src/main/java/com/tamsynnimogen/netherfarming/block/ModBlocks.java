@@ -14,6 +14,9 @@ import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static net.minecraft.block.Blocks.DARK_OAK_LOG;
+import static net.minecraft.block.Blocks.DARK_OAK_SIGN;
+
 public class ModBlocks
 {
 
@@ -45,12 +48,9 @@ public class ModBlocks
     public static final RegistryObject<Block> BLOODBARK_PRESSURE_PLATE =
             register("bloodbark_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
                     AbstractBlock.Properties.create(Material.WOOD)));
-/*
-    public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
-                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD),
-                    WoodType.DARK_OAK));
-*/
+
+
+
     public static final RegistryObject<Block> BLOODBARK_STAIRS =
             register("bloodbark_stairs", () -> new StairsBlock(() -> ModBlocks.BLOODBARK_PLANKS.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.WOOD)));
@@ -68,33 +68,36 @@ public class ModBlocks
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
 
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
+                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
+
     public static final RegistryObject<Block> BLOODBARK_LEAVES = register("bloodbark_leaves",
             () -> new ModLeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
-/*
-       public static final RegistryObject<Block> BLOODBARK_SAPLING = register("bloodbark_sapling",
-               () -> new SaplingBlock(new BloodbarkTree(), AbstractBlock.Properties
-               .create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT)));
-*/
 
    public static final RegistryObject<Block> BLOODBARK_SAPLING = register("bloodbark_sapling",
            () -> new ModFungusBlock(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.CYAN)
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_SAPLING_PLANTED;
            }));
-/*
+
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
             register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
-                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
+                    DARK_OAK_LOG.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
                     .lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
-*/
+
 public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
-    public static final RegistryObject<Block> BLOODBARK_WOOD = register("bloodbark_wood",
-            () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_WOOD)));
-
     public static final RegistryObject<Block> STRIPPED_BLOODBARK_WOOD = register("stripped_bloodbark_wood",
-            () -> new Block(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final RegistryObject<Block> BLOODBARK_WOOD = register("bloodbark_wood",
+            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_WOOD.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.WOOD)
+                            .hardnessAndResistance(0.5f,2.0f)
+                            .harvestTool(ToolType.AXE)
+                            .harvestLevel(0)));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",
