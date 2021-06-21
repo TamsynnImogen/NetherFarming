@@ -20,13 +20,13 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 
-public class ModAttachedStemBlock extends BushBlock {
+public class ModAttachedStemBlock extends AttachedStemBlock {
     public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
     private final StemGrownBlock grownFruit;
     private static final Map<Direction, VoxelShape> SHAPES = Maps.newEnumMap(ImmutableMap.of(Direction.SOUTH, Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 10.0D, 10.0D, 16.0D), Direction.WEST, Block.makeCuboidShape(0.0D, 0.0D, 6.0D, 10.0D, 10.0D, 10.0D), Direction.NORTH, Block.makeCuboidShape(6.0D, 0.0D, 0.0D, 10.0D, 10.0D, 10.0D), Direction.EAST, Block.makeCuboidShape(6.0D, 0.0D, 6.0D, 16.0D, 10.0D, 10.0D)));
 
     public ModAttachedStemBlock(StemGrownBlock grownFruit, AbstractBlock.Properties properties) {
-        super(properties);
+        super(grownFruit, properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
         this.grownFruit = grownFruit;
     }

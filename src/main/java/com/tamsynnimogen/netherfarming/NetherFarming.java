@@ -79,6 +79,10 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_LEAVES.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_DOOR.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_TRAPDOOR.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ATTACHED_GLOOM_SQUASH_STEM.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.ATTACHED_HELLKIN_STEM.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.GLOOM_SQUASH_STEM.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.HELLKIN_STEM.get(), RenderType.getCutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

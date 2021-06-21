@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/stem_fruit",
+  "textures": {
+    "stem": "netherfarming:block/gloom_squash_stem",
+    "upperstem": "netherfarming:block/attached_gloom_squash_stem"
+  }
+}

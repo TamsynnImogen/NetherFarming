@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "netherfarming:block/hellkin_top",
+    "side": "netherfarming:block/hellkin_side"
+  }
+}

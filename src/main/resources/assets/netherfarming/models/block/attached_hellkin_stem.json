@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/stem_fruit",
+  "textures": {
+    "stem": "netherfarming:block/hellkin_stem",
+    "upperstem": "netherfarming:block/attached_hellkin_stem"
+  }
+}

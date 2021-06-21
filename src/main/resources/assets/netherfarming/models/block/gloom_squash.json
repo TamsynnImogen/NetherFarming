@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "netherfarming:block/gloom_squash_top",
+    "side": "netherfarming:block/gloom_squash_side"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/stem_growth0",
+  "textures": {
+    "stem": "netherfarming:block/gloom_squash_stem"
+  }
+}
