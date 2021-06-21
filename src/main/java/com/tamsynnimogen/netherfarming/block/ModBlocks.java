@@ -82,9 +82,9 @@ public class ModBlocks
 
 
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
-            register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
+            Registration.BLOCKS.register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
                     DARK_OAK_LOG.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
-                    .lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
+                    .lootFrom(() -> ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
 */
 public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
@@ -108,14 +108,14 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
                     () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
 
     public static final RegistryObject<Block> GLOOM_SQUASH =
-            Registration.BLOCKS.register("gloom_squash",
+            register("gloom_squash",
                     () -> new GloomSquashBlock(AbstractBlock.Properties.create(Material.GOURD,
                             MaterialColor.BLUE)
                             .hardnessAndResistance(1.0F)
                             .sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> HELLKIN =
-            Registration.BLOCKS.register("hellkin",
+            register("hellkin",
                     () -> new HellkinBlock(AbstractBlock.Properties.create(Material.GOURD,
                             MaterialColor.RED)
                             .hardnessAndResistance(1.0F)
@@ -123,7 +123,7 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
 
     public static final RegistryObject<Block> ATTACHED_GLOOM_SQUASH_STEM =
             Registration.BLOCKS.register("attached_gloom_squash_stem",
-                    () -> new ModAttachedStemBlock((ModStemGrownBlock)GLOOM_SQUASH,
+                    () -> new ModAttachedStemBlock(((ModStemGrownBlock)GLOOM_SQUASH.get()),
                             AbstractBlock.Properties.create(Material.PLANTS)
                                     .doesNotBlockMovement()
                                     .zeroHardnessAndResistance()
@@ -131,7 +131,7 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
 
     public static final RegistryObject<Block> ATTACHED_HELLKIN_STEM =
             Registration.BLOCKS.register("attached_hellkin_stem",
-                    () -> new ModAttachedStemBlock((ModStemGrownBlock)HELLKIN,
+                    () -> new ModAttachedStemBlock((ModStemGrownBlock)HELLKIN.get(),
                             AbstractBlock.Properties.create(Material.PLANTS)
                                     .doesNotBlockMovement()
                                     .zeroHardnessAndResistance()
@@ -139,7 +139,7 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
 
     public static final RegistryObject<Block> GLOOM_SQUASH_STEM =
             Registration.BLOCKS.register("gloom_squash_stem",
-                    () -> new ModStemBlock((ModStemGrownBlock)GLOOM_SQUASH,
+                    () -> new ModStemBlock((ModStemGrownBlock)GLOOM_SQUASH.get(),
                             AbstractBlock.Properties.create(Material.PLANTS)
                                     .doesNotBlockMovement()
                                     .tickRandomly()
@@ -148,7 +148,7 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
 
     public static final RegistryObject<Block> HELLKIN_STEM =
             Registration.BLOCKS.register("melon_stem",
-                    () -> new ModStemBlock((ModStemGrownBlock)HELLKIN,
+                    () -> new ModStemBlock((ModStemGrownBlock)HELLKIN.get(),
                             AbstractBlock.Properties.create(Material.PLANTS)
                                     .doesNotBlockMovement()
                                     .tickRandomly()
