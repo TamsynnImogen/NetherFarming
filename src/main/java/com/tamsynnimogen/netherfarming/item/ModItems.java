@@ -28,10 +28,17 @@ public class ModItems
             Registration.ITEMS.register("cinder_bread",
                     () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.CINDER_BREAD)));
 
-
     public static final RegistryObject<Item> CINDER_WHEAT_SEEDS =
             Registration.ITEMS.register("cinder_wheat_seeds",
                     () -> new BlockItem(ModBlocks.CINDER_WHEAT_CROP.get(), new Item.Properties().group(NetherFarming.CREATIVETAB)));
+
+    public static final RegistryObject<Item> GLOOM_SQUASH_SEEDS =
+            Registration.ITEMS.register("gloom_squash_seeds",
+                    () -> new BlockNamedItem(ModBlocks.GLOOM_SQUASH_STEM.get(), new Item.Properties().group(NetherFarming.CREATIVETAB)));
+
+    public static final RegistryObject<Item> HELLKIN_SEEDS =
+            Registration.ITEMS.register("hellkin_seeds",
+                    () -> new BlockNamedItem(ModBlocks.HELLKIN_STEM.get(), new Item.Properties().group(NetherFarming.CREATIVETAB)));
 
     public static void register() { }
 

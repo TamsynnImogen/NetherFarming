@@ -49,8 +49,6 @@ public class ModBlocks
             register("bloodbark_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
                     AbstractBlock.Properties.create(Material.WOOD)));
 
-
-
     public static final RegistryObject<Block> BLOODBARK_STAIRS =
             register("bloodbark_stairs", () -> new StairsBlock(() -> ModBlocks.BLOODBARK_PLANKS.get().getDefaultState(),
                     AbstractBlock.Properties.create(Material.WOOD)));
@@ -68,10 +66,6 @@ public class ModBlocks
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
 
-    public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
-                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
-
     public static final RegistryObject<Block> BLOODBARK_LEAVES = register("bloodbark_leaves",
             () -> new ModLeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
 
@@ -80,12 +74,18 @@ public class ModBlocks
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_SAPLING_PLANTED;
            }));
+/*
+
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
+                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
+
 
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
             register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
                     DARK_OAK_LOG.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
                     .lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
-
+*/
 public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
@@ -106,6 +106,55 @@ public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
     public static final RegistryObject<Block> GLOWBERRY_CROP =
             Registration.BLOCKS.register("glowberry_crop",
                     () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
+
+    public static final RegistryObject<Block> GLOOM_SQUASH =
+            Registration.BLOCKS.register("gloom_squash",
+                    () -> new GloomSquashBlock(AbstractBlock.Properties.create(Material.GOURD,
+                            MaterialColor.BLUE)
+                            .hardnessAndResistance(1.0F)
+                            .sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> HELLKIN =
+            Registration.BLOCKS.register("hellkin",
+                    () -> new HellkinBlock(AbstractBlock.Properties.create(Material.GOURD,
+                            MaterialColor.RED)
+                            .hardnessAndResistance(1.0F)
+                            .sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> ATTACHED_GLOOM_SQUASH_STEM =
+            Registration.BLOCKS.register("attached_gloom_squash_stem",
+                    () -> new ModAttachedStemBlock((ModStemGrownBlock)GLOOM_SQUASH,
+                            AbstractBlock.Properties.create(Material.PLANTS)
+                                    .doesNotBlockMovement()
+                                    .zeroHardnessAndResistance()
+                                    .sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> ATTACHED_HELLKIN_STEM =
+            Registration.BLOCKS.register("attached_hellkin_stem",
+                    () -> new ModAttachedStemBlock((ModStemGrownBlock)HELLKIN,
+                            AbstractBlock.Properties.create(Material.PLANTS)
+                                    .doesNotBlockMovement()
+                                    .zeroHardnessAndResistance()
+                                    .sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> GLOOM_SQUASH_STEM =
+            Registration.BLOCKS.register("gloom_squash_stem",
+                    () -> new ModStemBlock((ModStemGrownBlock)GLOOM_SQUASH,
+                            AbstractBlock.Properties.create(Material.PLANTS)
+                                    .doesNotBlockMovement()
+                                    .tickRandomly()
+                                    .zeroHardnessAndResistance()
+                                    .sound(SoundType.STEM)));
+
+    public static final RegistryObject<Block> HELLKIN_STEM =
+            Registration.BLOCKS.register("melon_stem",
+                    () -> new ModStemBlock((ModStemGrownBlock)HELLKIN,
+                            AbstractBlock.Properties.create(Material.PLANTS)
+                                    .doesNotBlockMovement()
+                                    .tickRandomly()
+                                    .zeroHardnessAndResistance()
+                                    .sound(SoundType.STEM)));
+
 
     public static void register() { }
 
