@@ -7,6 +7,8 @@
   "item.netherfarming.cinder_bread": "Cinder Bread",
   "item.netherfarming.cinder_wheat": "Cinder Wheat",
   "item.netherfarming.cinder_wheat_dough": "Cinder Wheat Dough",
+  "item.netherfarming.gloom_squash_seeds": "Gloom Squash Seeds",
+  "item.netherfarming.hellkin_seeds": "Hellkin Seeds",
 
   //Blocks
   "block.netherfarming.fertile_soul_soil": "Fertile Soul Soil",
@@ -28,5 +30,10 @@
   "block.netherfarming.bloodbark_wall_sign": "Bloodbark Wall Sign",
   "block.netherfarming.bloodbark_wood": "Bloodbark Wood",
   "block.netherfarming.stripped_bloodbark_log": "Stripped Bloodbark Log",
-  "block.netherfarming.stripped_bloodbark_wood": "Stripped Bloodbark Wood"
+  "block.netherfarming.gloom_squash": "Gloom Squash",
+  "block.netherfarming.attached_gloom_squash_stem": "Attached Gloom Squash Stem",
+  "block.netherfarming.gloom_squash_stem": "Gloom Squash Stem",
+  "block.netherfarming.hellkin": "Hellkin",
+  "block.netherfarming.attached_hellkin_stem": "Attached Hellkin Stem",
+  "block.netherfarming.hellkin_stem": "Hellkin Stem"
 }

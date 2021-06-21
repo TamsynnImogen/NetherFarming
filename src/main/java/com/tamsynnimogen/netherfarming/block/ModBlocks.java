@@ -31,30 +31,30 @@ public class ModBlocks
                             .harvestLevel(0)));
 
     public static final RegistryObject<Block> BLOODBARK_BUTTON =
-            register("bloodbark_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.WOOD)));
+            register("bloodbark_button", () -> new WoodButtonBlock(AbstractBlock.Properties.from(Blocks.ACACIA_BUTTON)));
 
     public static final RegistryObject<Block> BLOODBARK_DOOR =
-            register("bloodbark_door", () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
+            register("bloodbark_door", () -> new DoorBlock(AbstractBlock.Properties.from(Blocks.ACACIA_DOOR)));
 
     public static final RegistryObject<Block> BLOODBARK_FENCE =
-            register("bloodbark_fence", () -> new FenceBlock(AbstractBlock.Properties.create(Material.WOOD)));
+            register("bloodbark_fence", () -> new FenceBlock(AbstractBlock.Properties.from(Blocks.ACACIA_FENCE)));
 
     public static final RegistryObject<Block> BLOODBARK_FENCE_GATE =
-            register("bloodbark_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.WOOD)));
+            register("bloodbark_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.ACACIA_FENCE_GATE)));
 
     public static final RegistryObject<Block> BLOODBARK_PLANKS = register("bloodbark_planks",
             () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS)));
 
     public static final RegistryObject<Block> BLOODBARK_PRESSURE_PLATE =
             register("bloodbark_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-                    AbstractBlock.Properties.create(Material.WOOD)));
+                    AbstractBlock.Properties.from(Blocks.ACACIA_PRESSURE_PLATE)));
 
     public static final RegistryObject<Block> BLOODBARK_STAIRS =
             register("bloodbark_stairs", () -> new StairsBlock(() -> ModBlocks.BLOODBARK_PLANKS.get().getDefaultState(),
-                    AbstractBlock.Properties.create(Material.WOOD)));
+                    AbstractBlock.Properties.from(Blocks.ACACIA_STAIRS)));
 
     public static final RegistryObject<Block> BLOODBARK_SLAB =
-            register("bloodbark_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.WOOD)));
+            register("bloodbark_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.ACACIA_SLAB)));
 
     public static final RegistryObject<Block> STRIPPED_BLOODBARK_LOG = register("stripped_bloodbark_log",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
@@ -74,18 +74,16 @@ public class ModBlocks
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_SAPLING_PLANTED;
            }));
-/*
 
+/*
     public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.create(Material.WOOD,
-                    ModBlocks.BLOODBARK_LOG.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
+            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(DARK_OAK_SIGN)));
 
 
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
-            register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD,
-                    DARK_OAK_LOG.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD)
-                    .lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
+            register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_WALL_SIGN)));
 */
+
 public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 

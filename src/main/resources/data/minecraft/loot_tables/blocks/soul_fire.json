@@ -23,6 +23,21 @@
         "type": "item",
         "name": "netherfarming:glowberry",
         "weight": 1
+      },
+      {
+        "type": "item",
+        "name": "netherfarming:bloodbark_sapling",
+        "weight": 1
+      },
+      {
+        "type": "item",
+        "name": "netherfarming:gloom_squash_seeds",
+        "weight": 1
+      },
+      {
+        "type": "item",
+        "name": "netherfarming:hellkin_seeds",
+        "weight": 1
       }
     ]
   }]
