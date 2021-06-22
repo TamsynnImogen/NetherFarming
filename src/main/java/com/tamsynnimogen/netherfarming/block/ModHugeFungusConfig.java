@@ -20,7 +20,7 @@ public class ModHugeFungusConfig implements IFeatureConfig {
             return config.planted;
         })).apply(builder, net.minecraft.world.gen.feature.HugeFungusConfig::new);
     });
-    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_FUNGUS_PLANTED = new net.minecraft.world.gen.feature.HugeFungusConfig(Blocks.SOUL_SOIL.getDefaultState(), ModBlocks.BLOODBARK_LOG.get().getDefaultState(), ModBlocks.BLOODBARK_WART_BLOCK.get().getDefaultState(), Blocks.SHROOMLIGHT.getDefaultState(), true);
+    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_FUNGUS_PLANTED = new net.minecraft.world.gen.feature.HugeFungusConfig(Blocks.SOUL_SOIL.getDefaultState(), ModBlocks.BLOODBARK_STEM.get().getDefaultState(), ModBlocks.BLOODBARK_WART_BLOCK.get().getDefaultState(), Blocks.SHROOMLIGHT.getDefaultState(), true);
     public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_FUNGUS;
     public final BlockState validBaseBlock;
     public final BlockState stemState;

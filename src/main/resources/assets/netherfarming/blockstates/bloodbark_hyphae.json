@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "netherfarming:block/bloodbark_hyphae",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "netherfarming:block/bloodbark_hyphae"
+    },
+    "axis=z": {
+      "model": "netherfarming:block/bloodbark_hyphae",
+      "x": 90
+    }
+  }
+}
