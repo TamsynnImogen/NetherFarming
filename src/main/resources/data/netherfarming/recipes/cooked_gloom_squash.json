@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {"item": "netherfarming:gloom_squash"},
+  "result": "netherfarming:cooked_gloom_squash",
+  "experience": 0.35,
+  "cookingtime": 100
+
+}

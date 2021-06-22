@@ -40,6 +40,14 @@ public class ModItems
             Registration.ITEMS.register("hellkin_seeds",
                     () -> new BlockNamedItem(ModBlocks.HELLKIN_STEM.get(), new Item.Properties().group(NetherFarming.CREATIVETAB)));
 
+    public static final RegistryObject<Item> HELLKIN_BLOOD_CURRY =
+            Registration.ITEMS.register("hellkin_blood_curry",
+                    () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.HELLKIN_BLOOD_CURRY)));
+
+    public static final RegistryObject<Item> COOKED_GLOOM_SQUASH =
+            Registration.ITEMS.register("cooked_gloom_squash",
+                    () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.COOKED_GLOOM_SQUASH)));
+
     public static void register() { }
 
 }

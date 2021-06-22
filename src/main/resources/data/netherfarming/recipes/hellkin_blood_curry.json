@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#",
+    "H"
+  ],
+  "key": {
+    "#": {
+      "item": "netherfarming:bloodbark_wart_block"
+    },
+    "H": {
+      "item": "netherfarming:hellkin"
+    }
+  },
+  "result": {
+    "item": "netherfarming:hellkin_blood_curry",
+    "count": 2
+  }
+}

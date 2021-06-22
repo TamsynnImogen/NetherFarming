@@ -9,6 +9,7 @@ public class ModFood extends Foods
 {
         public static final Food GLOWBERRY = (new Food.Builder()).hunger(2).saturation(0.1F).effect(() -> new EffectInstance(Effects.GLOWING, 300, 1), 0.5f).build();
         public static final Food CINDER_BREAD = (new Food.Builder()).hunger(2).saturation(0.1F).effect(() -> new EffectInstance(Effects.FIRE_RESISTANCE, 300, 1), 0.5f).build();
-
+        public static final Food HELLKIN_BLOOD_CURRY = (new Food.Builder()).hunger(2).saturation(0.1F).build();
+        public static final Food COOKED_GLOOM_SQUASH = (new Food.Builder()).hunger(2).saturation(0.1F).build();
 
 }
