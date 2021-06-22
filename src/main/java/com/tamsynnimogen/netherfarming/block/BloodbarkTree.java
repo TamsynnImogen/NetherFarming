@@ -23,7 +23,7 @@ public class BloodbarkTree extends Tree
 
     public static final BaseTreeFeatureConfig BLOODBARK_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(ModBlocks.BLOODBARK_LOG.get().getDefaultState()),
-            new SimpleBlockStateProvider(ModBlocks.BLOODBARK_LEAVES.get().getDefaultState()),
+            new SimpleBlockStateProvider(ModBlocks.BLOODBARK_WART_BLOCK.get().getDefaultState()),
             new BlobFoliagePlacer(FeatureSpread.create(LEAVE_RADIUS),
                     FeatureSpread.create(LEAVE_OFFSET), LEAVE_HEIGHT),
             new StraightTrunkPlacer(BASE_HEIGHT,FIRST_RANDOM_HEIGHT,SECOND_RANDOM_HEIGHT),

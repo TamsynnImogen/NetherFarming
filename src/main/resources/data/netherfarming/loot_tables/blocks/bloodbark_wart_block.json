@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "netherfarming:bloodbark_sapling"
+          "name": "netherfarming:bloodbark_wart_block"
         }
       ],
       "conditions": [

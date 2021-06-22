@@ -20,8 +20,8 @@ public class ModHugeFungusConfig implements IFeatureConfig {
             return config.planted;
         })).apply(builder, net.minecraft.world.gen.feature.HugeFungusConfig::new);
     });
-    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_SAPLING_PLANTED = new net.minecraft.world.gen.feature.HugeFungusConfig(Blocks.SOUL_SOIL.getDefaultState(), ModBlocks.BLOODBARK_LOG.get().getDefaultState(), ModBlocks.BLOODBARK_LEAVES.get().getDefaultState(), ModBlocks.BLOODBARK_LEAVES.get().getDefaultState(), true);
-    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_SAPLING;
+    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_FUNGUS_PLANTED = new net.minecraft.world.gen.feature.HugeFungusConfig(Blocks.SOUL_SOIL.getDefaultState(), ModBlocks.BLOODBARK_LOG.get().getDefaultState(), ModBlocks.BLOODBARK_WART_BLOCK.get().getDefaultState(), Blocks.SHROOMLIGHT.getDefaultState(), true);
+    public static final net.minecraft.world.gen.feature.HugeFungusConfig BLOODBARK_FUNGUS;
     public final BlockState validBaseBlock;
     public final BlockState stemState;
     public final BlockState hatState;
@@ -37,7 +37,7 @@ public class ModHugeFungusConfig implements IFeatureConfig {
     }
 
     static {
-        BLOODBARK_SAPLING = new net.minecraft.world.gen.feature.HugeFungusConfig(BLOODBARK_SAPLING_PLANTED.validBaseBlock, BLOODBARK_SAPLING_PLANTED.stemState, BLOODBARK_SAPLING_PLANTED.hatState, BLOODBARK_SAPLING_PLANTED.decorState, false);
+        BLOODBARK_FUNGUS = new net.minecraft.world.gen.feature.HugeFungusConfig(BLOODBARK_FUNGUS_PLANTED.validBaseBlock, BLOODBARK_FUNGUS_PLANTED.stemState, BLOODBARK_FUNGUS_PLANTED.hatState, BLOODBARK_FUNGUS_PLANTED.decorState, false);
     }
 }
 

@@ -2,95 +2,73 @@ package com.tamsynnimogen.netherfarming.block;
 
 import java.util.Random;
 
-import com.tamsynnimogen.netherfarming.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.trees.Tree;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class ModSaplingBlock extends BushBlock implements IGrowable
-{
-   public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;
+public class ModSaplingBlock extends BushBlock implements IGrowable {
+   public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
+   protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
+   private final Tree tree;
 
-   public ModSaplingBlock(AbstractBlock.Properties properties) {
+   public ModSaplingBlock(Tree treeIn, AbstractBlock.Properties properties) {
       super(properties);
-      this.setDefaultState(this.stateContainer.getBaseState().with(AGE, Integer.valueOf(0)));
+      this.tree = treeIn;
+      this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
    }
 
+   public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+      return SHAPE;
+   }
+
+   /**
+    * Performs a random tick on a block.
+    */
    public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-      int i = state.get(AGE);
-      if (i < 3 && worldIn.getLightSubtracted(pos.up(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state,random.nextInt(5) == 0)) {
-         worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i + 1)), 2);
-         net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state);
+      if (worldIn.getLight(pos.up()) >= 9 && random.nextInt(7) == 0) {
+         if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+         this.placeTree(worldIn, pos, state, random);
       }
 
    }
 
-   public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-      if (entityIn instanceof LivingEntity && entityIn.getType() != EntityType.FOX && entityIn.getType() != EntityType.BEE) {
-         entityIn.setMotionMultiplier(state, new Vector3d((double)0.8F, 0.75D, (double)0.8F));
-         if (!worldIn.isRemote && state.get(AGE) > 0 && (entityIn.lastTickPosX != entityIn.getPosX() || entityIn.lastTickPosZ != entityIn.getPosZ())) {
-            double d0 = Math.abs(entityIn.getPosX() - entityIn.lastTickPosX);
-            double d1 = Math.abs(entityIn.getPosZ() - entityIn.lastTickPosZ);
-            if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
-               entityIn.attackEntityFrom(ModDamageSource.GLOWBERRY_BUSH, 1.0F);
-            }
-         }
-
-      }
-   }
-
-   public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-      int i = state.get(AGE);
-      boolean flag = i == 3;
-      if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL) {
-         return ActionResultType.PASS;
-      } else if (i > 1) {
-         int j = 1 + worldIn.rand.nextInt(2);
-         spawnAsEntity(worldIn, pos, new ItemStack(ModItems.GLOWBERRY.get(), j + (flag ? 1 : 0)));
-         worldIn.playSound((PlayerEntity)null, pos, SoundEvents.ITEM_SWEET_BERRIES_PICK_FROM_BUSH, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-         worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(1)), 2);
-         return ActionResultType.func_233537_a_(worldIn.isRemote);
+   public void placeTree(ServerWorld world, BlockPos pos, BlockState state, Random rand) {
+      if (state.get(STAGE) == 0) {
+         world.setBlockState(pos, state.cycleValue(STAGE), 4);
       } else {
-         return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+         if (!net.minecraftforge.event.ForgeEventFactory.saplingGrowTree(world, rand, pos)) return;
+         this.tree.attemptGrowTree(world, world.getChunkProvider().getChunkGenerator(), pos, state, rand);
       }
+
    }
 
-   protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-      builder.add(AGE);
-   }
-
+   /**
+    * Whether this IGrowable can grow
+    */
    public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-      return state.get(AGE) < 3;
-   }
-
-   public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
       return true;
    }
 
+   public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+      return (double)worldIn.rand.nextFloat() < 0.45D;
+   }
+
    public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-      int i = Math.min(3, state.get(AGE) + 1);
-      worldIn.setBlockState(pos, state.with(AGE, Integer.valueOf(i)), 2);
+      this.placeTree(worldIn, pos, state, rand);
+   }
+
+   protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+      builder.add(STAGE);
    }
 
    @Override
@@ -99,11 +77,11 @@ public class ModSaplingBlock extends BushBlock implements IGrowable
       BlockState state = worldIn.getBlockState(pos.down());
       Block block = state.getBlock();
 
-      if (block.equals(ModBlocks.TILLED_SOUL_SOIL.get()))
+      if (block.equals(Blocks.SOUL_SAND))
       {
          return true;
       }
-      else if (block.equals(ModBlocks.FERTILE_SOUL_SOIL.get()))
+      else if (block.equals(Blocks.SOUL_SOIL))
       {
          return true;
       }
@@ -113,19 +91,15 @@ public class ModSaplingBlock extends BushBlock implements IGrowable
       }
    }
 
+   @Override
+   public boolean canSustainPlant(BlockState state, IBlockReader world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
+      BlockState plant = plantable.getPlant(world, pos.offset(facing));
+      net.minecraftforge.common.PlantType type = plantable.getPlantType(world, pos.offset(facing));
 
-    /*
-public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-    return shouldLightSoulFire(worldIn.getBlockState(pos.down()).getBlock());
-}
+      if (plant.getBlock() == ModBlocks.BLOODBARK_FUNGUS.get())
+         return state.matchesBlock(Blocks.SOUL_SOIL) || state.matchesBlock(Blocks.SOUL_SAND) || state.matchesBlock(ModBlocks.BLOODBARK_FUNGUS.get());
 
-    public static boolean shouldLightSoulFire(Block block) {
-        return block.isIn(ModBlockTags.GLOWBERRY_BASE_BLOCKS);
-    }
+      return false;
+   }
 
-    protected boolean canBurn(BlockState state) {
-        return true;
-    }
-
-     */
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "netherfarming:bloodbark_stems"
+    }
+  ],
+  "result": {
+    "item": "netherfarming:bloodbark_stems",
+    "count": 4
+  }
+}

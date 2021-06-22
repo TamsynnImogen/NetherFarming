@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_trapdoor",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "netherfarming:bloodbark_planks"
+    }
+  },
+  "result": {
+    "item": "netherfarming:bloodbark_trapdoor",
+    "count": 2
+  }
+}

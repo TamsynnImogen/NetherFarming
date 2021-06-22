@@ -28,14 +28,15 @@ public class ModFungusBlock extends BushBlock implements IGrowable {
     }
 
     protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-        return state.isIn(BlockTags.NYLIUM) || state.matchesBlock(Blocks.MYCELIUM) || state.matchesBlock(Blocks.SOUL_SOIL) || super.isValidGround(state, worldIn, pos);
+        return state.isIn(BlockTags.NYLIUM) || state.matchesBlock(Blocks.MYCELIUM) || state.matchesBlock(Blocks.SOUL_SOIL) || state.matchesBlock(Blocks.SOUL_SAND) || state.matchesBlock(ModBlocks.FERTILE_SOUL_SOIL.get()) || super.isValidGround(state, worldIn, pos);
     }
 
     /**
      * Whether this IGrowable can grow
      */
     public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-        Block block = ((HugeFungusConfig)(this.fungusFeature.get()).config).validBaseBlock.getBlock();
+       // Block block = ((HugeFungusConfig)(this.fungusFeature.get()).config).validBaseBlock.getBlock();
+        Block block = Blocks.SOUL_SOIL;
         Block block1 = worldIn.getBlockState(pos.down()).getBlock();
         return block1 == block;
     }

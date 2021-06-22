@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "netherfarming:bloodbark_stem",
+    "netherfarming:bloodbark_hyphae",
+    "netherfarming:stripped_bloodbark_stem",
+    "netherfarming:stripped_bloodbark_hyphae"
+  ]
+}

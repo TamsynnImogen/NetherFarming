@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
-    "netherfarming:bloodbark_log",
-    "netherfarming:stripped_bloodbark_log"
+    "#minecraft:logs_that_burn",
+    "#minecraft:crimson_stems",
+    "#minecraft:warped_stems",
+    "#netherfarming:bloobark_stems"
   ]
 }

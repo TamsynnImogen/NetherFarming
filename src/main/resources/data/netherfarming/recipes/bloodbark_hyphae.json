@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "netherfarming:bloodbark_stem"
+    }
+  },
+  "result": {
+    "item": "netherfarming:bloodbark_hyphae",
+    "count": 3
+  }
+}

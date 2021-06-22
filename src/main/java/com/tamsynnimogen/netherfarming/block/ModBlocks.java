@@ -14,9 +14,6 @@ import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.block.Blocks.DARK_OAK_LOG;
-import static net.minecraft.block.Blocks.DARK_OAK_SIGN;
-
 public class ModBlocks
 {
 
@@ -56,43 +53,44 @@ public class ModBlocks
     public static final RegistryObject<Block> BLOODBARK_SLAB =
             register("bloodbark_slab", () -> new SlabBlock(AbstractBlock.Properties.from(Blocks.ACACIA_SLAB)));
 
-    public static final RegistryObject<Block> STRIPPED_BLOODBARK_LOG = register("stripped_bloodbark_log",
-            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_BLOODBARK_STEM = register("stripped_bloodbark_stem",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.WARPED_STEM)));
 
-    public static final RegistryObject<Block> BLOODBARK_LOG = register("bloodbark_log",
-            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_LOG.get().getDefaultState(),
-                    AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> BLOODBARK_STEM = register("bloodbark_stem",
+            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_STEM.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.NETHER_WOOD)
                             .hardnessAndResistance(0.5f,2.0f)
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
 
-    public static final RegistryObject<Block> BLOODBARK_LEAVES = register("bloodbark_leaves",
-            () -> new ModLeavesBlock(AbstractBlock.Properties.from(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> BLOODBARK_WART_BLOCK = register("bloodbark_wart_block",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.WARPED_WART_BLOCK)));
 
-   public static final RegistryObject<Block> BLOODBARK_SAPLING = register("bloodbark_sapling",
+   public static final RegistryObject<Block> BLOODBARK_FUNGUS = register("bloodbark_fungus",
            () -> new ModFungusBlock(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.CYAN)
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
-               return ModFeatures.BLOODBARK_SAPLING_PLANTED;
+               return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
 
 /*
     public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(DARK_OAK_SIGN)));
+            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_SIGN)));
 
 
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
             register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_WALL_SIGN)));
+
 */
 
-public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
+    public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
-    public static final RegistryObject<Block> STRIPPED_BLOODBARK_WOOD = register("stripped_bloodbark_wood",
-            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_BLOODBARK_HYPHAE = register("stripped_bloodbark_hyphae",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_WARPED_HYPHAE)));
 
-    public static final RegistryObject<Block> BLOODBARK_WOOD = register("bloodbark_wood",
-            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_WOOD.get().getDefaultState(),
-                    AbstractBlock.Properties.create(Material.WOOD)
+    public static final RegistryObject<Block> BLOODBARK_HYPHAE = register("bloodbark_hyphae",
+            ()-> new ModStrippedBlock(STRIPPED_BLOODBARK_HYPHAE.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.NETHER_WOOD)
                             .hardnessAndResistance(0.5f,2.0f)
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));

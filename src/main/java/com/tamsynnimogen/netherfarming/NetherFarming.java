@@ -75,8 +75,7 @@ public class NetherFarming
     {
         RenderTypeLookup.setRenderLayer(ModBlocks.CINDER_WHEAT_CROP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.GLOWBERRY_CROP.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_SAPLING.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_LEAVES.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_FUNGUS.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_DOOR.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.BLOODBARK_TRAPDOOR.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.ATTACHED_GLOOM_SQUASH_STEM.get(), RenderType.getCutout());

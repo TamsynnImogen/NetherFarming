@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:beetroots",
+    "minecraft:carrots",
+    "minecraft:potatoes",
+    "minecraft:wheat",
+    "minecraft:melon_stem",
+    "minecraft:pumpkin_stem",
+    "netherfarming:cinder_wheat_crop",
+    "netherfarming:glowberry_crop",
+    "netherfarming:gloom_squash_stem",
+    "netherfarming:hellkin_stem"
+  ]
+}

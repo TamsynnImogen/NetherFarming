@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "netherfarming:block/bloodbark_sapling"
+    "cross": "netherfarming:block/bloodbark_fungus"
   }
 }
