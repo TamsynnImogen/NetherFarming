@@ -20,7 +20,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class ModEvents
 {
     @SubscribeEvent
-    public void onCopperedEntity(AttackEntityEvent event)
+    public void onGlowingEntity(AttackEntityEvent event)
     {
         if(event.getPlayer().getHeldItemMainhand().getItem() == ModItems.GLOWBERRY.get())
         {
