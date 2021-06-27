@@ -101,6 +101,10 @@ public class GlowberryCrop extends BushBlock implements IGrowable
         {
             return true;
         }
+        else if (block.equals(Blocks.SOUL_SOIL))
+        {
+            return true;
+        }
         else
         {
             return false;

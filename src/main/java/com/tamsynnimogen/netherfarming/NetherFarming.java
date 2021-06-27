@@ -82,6 +82,8 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.ATTACHED_HELLKIN_STEM.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.GLOOM_SQUASH_STEM.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.HELLKIN_STEM.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_ROOTS.get(), RenderType.getCutout());
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

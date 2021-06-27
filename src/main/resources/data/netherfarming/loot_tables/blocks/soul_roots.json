@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:grass",
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 1
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "item": "minecraft:shears"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "netherfarming:cinder_wheat_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "netherfarming:hellkin_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "netherfarming:gloom_squash_seeds"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.125
+        }
+      ]
+    }
+  ]
+}

@@ -59,4 +59,27 @@ public class ModEvents
         }
 
     }
+
+    @SubscribeEvent
+    public void onFertileSoulSoilClick(PlayerInteractEvent.RightClickBlock e) {
+        World worldIn = e.getWorld();
+        PlayerEntity player = e.getPlayer();
+        ItemStack hand = e.getItemStack();
+        BlockPos pos = e.getPos();
+        BlockState state = worldIn.getBlockState(pos);
+        Block block = state.getBlock();
+        if (worldIn.isRemote) {
+            return;
+        }
+        if (!hand.getItem().equals(Items.FLINT_AND_STEEL)) {
+            return;
+        }
+        if (block == (ModBlocks.FERTILE_SOUL_SOIL.get())) {
+            worldIn.setBlockState(pos, Blocks.SOUL_SOIL.getDefaultState());
+ /*           if (!player.isCreative()) {
+                hand.shrink(1);
+            }*/
+        }
+
+    }
 }

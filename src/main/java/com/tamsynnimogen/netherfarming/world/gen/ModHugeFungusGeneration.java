@@ -35,8 +35,7 @@ public class ModHugeFungusGeneration
             List<Supplier<ConfiguredFeature<?, ?>>> base =
                     event.getGeneration().getFeatures(GenerationStage.Decoration.VEGETAL_DECORATION);
 
-            base.add(() -> Feature.HUGE_FUNGUS.withConfiguration(ModHugeFungusConfig.BLOODBARK_FUNGUS)
-                    .withPlacement(Placement.DARK_OAK_TREE.configure(NoPlacementConfig.INSTANCE)));
+            base.add(() -> ModConfiguredFeatures.BLOODBARK_CONFIGURED_FEATURE);
         }
     }
 }

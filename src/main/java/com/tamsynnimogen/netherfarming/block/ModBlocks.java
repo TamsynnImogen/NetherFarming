@@ -151,6 +151,9 @@ public class ModBlocks
                                     .zeroHardnessAndResistance()
                                     .sound(SoundType.STEM)));
 
+    public static final RegistryObject<Block> SOUL_ROOTS =
+            Registration.BLOCKS.register("soul_roots",
+                    () -> new NetherRootsBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_ROOTS)));
 
     public static void register() { }
 
