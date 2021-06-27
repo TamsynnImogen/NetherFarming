@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = '1.16.5-36.1.24-1.1b'
 group = 'com.tamsynnimogen.netherfarming' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'netherfarming'
 
