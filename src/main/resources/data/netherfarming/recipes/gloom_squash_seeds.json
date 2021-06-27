@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherfarming:gloom_squash"
+    }
+  ],
+  "result": {
+    "item": "netherfarming:gloom_squash_seeds",
+    "count": 4
+  }
+}

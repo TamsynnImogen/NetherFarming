@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "netherfarming:hellkin"
+    }
+  ],
+  "result": {
+    "item": "netherfarming:hellkin_seeds",
+    "count": 4
+  }
+}
