@@ -13,5 +13,5 @@ public class ModConfiguredFeatures {
     public static final ConfiguredFeature<?, ?> BLOODBARK_CONFIGURED_FEATURE =
             Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, "bloodbark_fungus",
                     Feature.HUGE_FUNGUS.withConfiguration(ModHugeFungusConfig.BLOODBARK_FUNGUS)
-                            .withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(8))));
+                            .withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1))));
 }
