@@ -9,9 +9,6 @@ import net.minecraft.world.gen.feature.*;
 
 public class ModFeatures {
 
-
-
-
     public static final class Configs {
         public static final BlockStateProvidingFeatureConfig SOUL_SOIL_VEGETATION_CONFIG = new BlockStateProvidingFeatureConfig((new WeightedBlockStateProvider()).addWeightedBlockstate(ModFeatures.States.SOUL_ROOTS, 85).addWeightedBlockstate(ModFeatures.States.BLOODBARK_FUNGUS, 10).addWeightedBlockstate(ModFeatures.States.GLOWBERRY_CROP, 5));
     }
