@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems
 {
+
     public static final RegistryObject<Item> NETHER_FARMING_ICON =
             Registration.ITEMS.register("nether_farming_icon",
                     () -> new Item(new Item.Properties()));

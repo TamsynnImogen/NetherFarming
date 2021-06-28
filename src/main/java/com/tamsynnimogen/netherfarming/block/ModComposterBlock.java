@@ -3,12 +3,17 @@ package com.tamsynnimogen.netherfarming.block;
 import com.tamsynnimogen.netherfarming.item.ModItems;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import java.util.Random;
+import javax.annotation.Nullable;
+
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.ISidedInventoryProvider;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -17,7 +22,13 @@ import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
@@ -31,10 +42,7 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-import javax.annotation.Nullable;
-import java.util.Random;
-
-public class ModComposterBlock extends ComposterBlock {
+public class ModComposterBlock extends ComposterBlock implements ISidedInventoryProvider {
     public static final IntegerProperty LEVEL = BlockStateProperties.LEVEL_0_8;
     public static final Object2FloatMap<IItemProvider> CHANCES = new Object2FloatOpenHashMap<>();
     private static final VoxelShape OUT_SHAPE = VoxelShapes.fullCube();
@@ -45,7 +53,6 @@ public class ModComposterBlock extends ComposterBlock {
 
         shapes[8] = shapes[7];
     });
-
 
     public static void init() {
         CHANCES.defaultReturnValue(-1.0F);
@@ -61,8 +68,9 @@ public class ModComposterBlock extends ComposterBlock {
         CHANCES.put(itemIn.asItem(), chance);
     }
 
-    public ModComposterBlock(Properties properties) {
+    public ModComposterBlock(AbstractBlock.Properties properties) {
         super(properties);
+        this.setDefaultState(this.stateContainer.getBaseState().with(LEVEL, Integer.valueOf(0)));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -306,7 +314,7 @@ public class ModComposterBlock extends ComposterBlock {
          * Returns true if automation can insert the given item in the given slot from the given side.
          */
         public boolean canInsertItem(int index, ItemStack itemStackIn, @Nullable Direction direction) {
-            return !this.inserted && direction == Direction.UP && ComposterBlock.CHANCES.containsKey(itemStackIn.getItem());
+            return !this.inserted && direction == Direction.UP && ModComposterBlock.CHANCES.containsKey(itemStackIn.getItem());
         }
 
         /**
@@ -331,5 +339,4 @@ public class ModComposterBlock extends ComposterBlock {
 
         }
     }
-
 }

@@ -48,6 +48,7 @@ public class NetherFarming
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());
 
