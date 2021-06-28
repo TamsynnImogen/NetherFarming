@@ -66,7 +66,13 @@ public class ModBlocks
     public static final RegistryObject<Block> BLOODBARK_WART_BLOCK = register("bloodbark_wart_block",
             () -> new Block(AbstractBlock.Properties.from(Blocks.WARPED_WART_BLOCK)));
 
-   public static final RegistryObject<Block> BLOODBARK_FUNGUS = register("bloodbark_fungus",
+    /*
+    public static final RegistryObject<Block> POTTED_BLOODBARK_FUNGUS =
+            register("potted_bloodbark_fungus", () -> new FlowerPotBlock(ModBlocks.BLOODBARK_FUNGUS.get(), AbstractBlock
+                    .Properties.create(Material.MISCELLANEOUS).zeroHardnessAndResistance().notSolid()));
+*/
+
+    public static final RegistryObject<Block> BLOODBARK_FUNGUS = register("bloodbark_fungus",
            () -> new ModFungusBlock(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.CYAN)
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
