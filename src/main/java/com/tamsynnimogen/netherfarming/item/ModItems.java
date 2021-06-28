@@ -24,6 +24,10 @@ public class ModItems
             Registration.ITEMS.register("glowberry",
                     () -> new BlockNamedItem(ModBlocks.GLOWBERRY_CROP.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.GLOWBERRY)));
 
+    public static final RegistryObject<Item> SOUL_ROOTS =
+            Registration.ITEMS.register("soul_roots",
+                    () -> new BlockNamedItem(ModBlocks.SOUL_ROOTS.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
+
     public static final RegistryObject<Item> CINDER_BREAD =
             Registration.ITEMS.register("cinder_bread",
                     () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.CINDER_BREAD)));

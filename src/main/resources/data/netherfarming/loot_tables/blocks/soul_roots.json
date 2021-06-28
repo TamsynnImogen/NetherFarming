@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:grass",
+          "name": "netherfarming:soul_roots",
           "conditions": [
             {
               "condition": "minecraft:random_chance",
