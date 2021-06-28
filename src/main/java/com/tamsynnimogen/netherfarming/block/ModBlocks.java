@@ -99,6 +99,11 @@ public class ModBlocks
             Registration.BLOCKS.register("cinder_wheat_crop",
                     () -> new CinderWheatCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
+    public static final RegistryObject<Block> SOUL_ROOTS =
+            Registration.BLOCKS.register("soul_roots",
+                    () -> new NetherRootsBlock(AbstractBlock.Properties.create(Material.NETHER_PLANTS, MaterialColor.BROWN)
+                            .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.ROOT)));
+
     public static final RegistryObject<Block> GLOWBERRY_CROP =
             Registration.BLOCKS.register("glowberry_crop",
                     () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
@@ -150,11 +155,6 @@ public class ModBlocks
                                     .tickRandomly()
                                     .zeroHardnessAndResistance()
                                     .sound(SoundType.STEM)));
-
-    public static final RegistryObject<Block> SOUL_ROOTS =
-            Registration.BLOCKS.register("soul_roots",
-                    () -> new NetherRootsBlock(AbstractBlock.Properties.create(Material.NETHER_PLANTS, MaterialColor.BROWN)
-                            .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.ROOT)));
 
     public static void register() { }
 
