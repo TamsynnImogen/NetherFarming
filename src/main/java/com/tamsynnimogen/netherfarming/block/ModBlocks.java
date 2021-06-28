@@ -153,7 +153,8 @@ public class ModBlocks
 
     public static final RegistryObject<Block> SOUL_ROOTS =
             Registration.BLOCKS.register("soul_roots",
-                    () -> new NetherRootsBlock(AbstractBlock.Properties.from(Blocks.CRIMSON_ROOTS)));
+                    () -> new NetherRootsBlock(AbstractBlock.Properties.create(Material.NETHER_PLANTS, MaterialColor.BROWN)
+                            .doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.ROOT)));
 
     public static void register() { }
 
