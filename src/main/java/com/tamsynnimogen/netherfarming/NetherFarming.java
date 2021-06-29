@@ -73,6 +73,19 @@ public class NetherFarming
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         event.enqueueWork(() -> {
             ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT_DOUGH.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.GLOWBERRY.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.SOUL_ROOTS.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.CINDER_BREAD.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.CINDER_HAY_BLOCK.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT_SEEDS.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.GLOOM_SQUASH_SEEDS.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.HELLKIN_SEEDS.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.HELLKIN_BLOOD_CURRY.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModItems.COOKED_GLOOM_SQUASH.get(), 0.32f);
+            ComposterBlock.CHANCES.put(ModBlocks.BLOODBARK_FUNGUS.get().asItem(), 0.32f);
+            ComposterBlock.CHANCES.put(ModBlocks.GLOOM_SQUASH.get().asItem(), 0.32f);
+            ComposterBlock.CHANCES.put(ModBlocks.HELLKIN.get().asItem(), 0.32f);
         });
     }
 
