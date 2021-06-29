@@ -6,6 +6,7 @@ import com.tamsynnimogen.netherfarming.item.ModItems;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
@@ -70,6 +71,9 @@ public class NetherFarming
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(() -> {
+            ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT.get(), 0.5f);
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
