@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "netherfarming:cinder_hay_block"
+    }
+  ],
+  "result": {
+    "item": "netherfarming:cinder_wheat",
+    "count": 9
+  }
+}

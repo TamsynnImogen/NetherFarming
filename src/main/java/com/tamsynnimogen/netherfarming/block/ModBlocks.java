@@ -105,6 +105,11 @@ public class ModBlocks
             Registration.BLOCKS.register("cinder_wheat_crop",
                     () -> new CinderWheatCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
+    public static final RegistryObject<Block> CINDER_HAY_BLOCK =
+            Registration.BLOCKS.register("cinder_hay_block",
+                    () -> new HayBlock(AbstractBlock.Properties.create(Material.ORGANIC, MaterialColor.RED).hardnessAndResistance(0.5F)
+                            .sound(SoundType.PLANT)));
+
     public static final RegistryObject<Block> SOUL_ROOTS =
             Registration.BLOCKS.register("soul_roots",
                     () -> new NetherRootsBlock(AbstractBlock.Properties.create(Material.NETHER_PLANTS, MaterialColor.BROWN)

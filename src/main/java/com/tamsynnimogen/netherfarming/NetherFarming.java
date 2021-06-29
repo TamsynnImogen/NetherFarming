@@ -72,7 +72,7 @@ public class NetherFarming
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         event.enqueueWork(() -> {
-            ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT.get(), 0.5f);
+            ComposterBlock.CHANCES.put(ModItems.CINDER_WHEAT.get(), 0.32f);
         });
     }
 

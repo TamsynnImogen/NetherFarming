@@ -29,6 +29,10 @@ public class ModItems
             Registration.ITEMS.register("soul_roots",
                     () -> new BlockNamedItem(ModBlocks.SOUL_ROOTS.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
 
+    public static final RegistryObject<Item> CINDER_HAY_BLOCK =
+            Registration.ITEMS.register("cinder_hay_block",
+                    () -> new BlockNamedItem(ModBlocks.CINDER_HAY_BLOCK.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
+
     public static final RegistryObject<Item> CINDER_BREAD =
             Registration.ITEMS.register("cinder_bread",
                     () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.CINDER_BREAD)));

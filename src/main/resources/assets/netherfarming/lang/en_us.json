@@ -12,6 +12,7 @@
   "item.netherfarming.hellkin_blood_curry": "Hellkin Blood Curry",
   "item.netherfarming.cooked_gloom_squash": "Cooked Gloom Squash",
   "item.netherfarming.soul_roots": "Soul Roots",
+  "item.netherfarming.cinder_hay_block": "Cinder Hay Block",
 
   //Blocks
   "block.netherfarming.fertile_soul_soil": "Fertile Soul Soil",
@@ -40,5 +41,6 @@
   "block.netherfarming.hellkin": "Hellkin",
   "block.netherfarming.attached_hellkin_stem": "Attached Hellkin Stem",
   "block.netherfarming.hellkin_stem": "Hellkin Stem",
-  "block.netherfarming.soul_roots": "Soul Roots"
+  "block.netherfarming.soul_roots": "Soul Roots",
+  "block.netherfarming.cinder_hay_block": "Cinder Hay Block"
 }
