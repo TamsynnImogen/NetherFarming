@@ -101,6 +101,9 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.GLOOM_SQUASH_STEM.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.HELLKIN_STEM.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_ROOTS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_SOUL_ROOTS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_BLOODBARK_FUNGUS.get(), RenderType.getCutout());
+
 
     }
 

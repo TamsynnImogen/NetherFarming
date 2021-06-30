@@ -66,28 +66,18 @@ public class ModBlocks
     public static final RegistryObject<Block> BLOODBARK_WART_BLOCK = register("bloodbark_wart_block",
             () -> new Block(AbstractBlock.Properties.from(Blocks.WARPED_WART_BLOCK)));
 
-    /*
-    public static final RegistryObject<Block> POTTED_BLOODBARK_FUNGUS =
-            register("potted_bloodbark_fungus", () -> new FlowerPotBlock(ModBlocks.BLOODBARK_FUNGUS.get(), AbstractBlock
-                    .Properties.create(Material.MISCELLANEOUS).zeroHardnessAndResistance().notSolid()));
-*/
-
     public static final RegistryObject<Block> BLOODBARK_FUNGUS = register("bloodbark_fungus",
            () -> new ModFungusBlock(AbstractBlock.Properties.create(Material.PLANTS, MaterialColor.CYAN)
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
-
 /*
     public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_SIGN)));
+            register("bloodbark_sign", () -> new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
 
-
-    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
-            register("bloodbark_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_WALL_SIGN)));
-
+     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
+            register("bloodbark_wall_sign", () -> new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
 */
-
     public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
@@ -118,6 +108,14 @@ public class ModBlocks
     public static final RegistryObject<Block> GLOWBERRY_CROP =
             Registration.BLOCKS.register("glowberry_crop",
                     () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
+
+    public static final RegistryObject<Block> POTTED_SOUL_ROOTS =
+            Registration.BLOCKS.register("potted_soul_roots",
+                    () -> new FlowerPotBlock(SOUL_ROOTS.get(), AbstractBlock.Properties.from(Blocks.FLOWER_POT)));
+
+    public static final RegistryObject<Block> POTTED_BLOODBARK_FUNGUS =
+            Registration.BLOCKS.register("potted_bloodbark_fungus",
+                    () -> new FlowerPotBlock(BLOODBARK_FUNGUS.get(), AbstractBlock.Properties.from(Blocks.FLOWER_POT)));
 
     public static final RegistryObject<Block> GLOOM_SQUASH =
             register("gloom_squash",

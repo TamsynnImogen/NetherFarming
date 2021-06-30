@@ -1,0 +1,6 @@
+{
+  "parent": "netherfarming:block/flower_pot_cross",
+  "textures": {
+    "plant": "netherfarming:block/bloodbark_fungus"
+  }
+}
