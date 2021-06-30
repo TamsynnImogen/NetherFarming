@@ -1,5 +1,6 @@
 package com.tamsynnimogen.netherfarming.block;
 
+import com.mojang.datafixers.util.Pair;
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.compat.ModStrippedBlock;
 import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
@@ -72,12 +73,12 @@ public class ModBlocks
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
 /*
-    public static final RegistryObject<Block> BLOODBARK_SIGN =
-            register("bloodbark_sign", () -> new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.DARK_OAK));
+    private static final BlockSubRegistryHelper HELPER = NetherFarming.REGISTRY_HELPER.getBlockSubHelper();
 
-     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
-            register("bloodbark_wall_sign", () -> new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.DARK_OAK));
+
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> SIGNS = HELPER.createSignBlock("test", MaterialColor.PINK);
 */
+
     public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
