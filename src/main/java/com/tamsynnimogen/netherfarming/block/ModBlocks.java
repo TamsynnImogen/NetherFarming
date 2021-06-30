@@ -1,9 +1,11 @@
 package com.tamsynnimogen.netherfarming.block;
 
-import com.mojang.datafixers.util.Pair;
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.compat.ModStrippedBlock;
 import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
+import com.tamsynnimogen.netherfarming.tileentity.ModStandingSignBlock;
+import com.tamsynnimogen.netherfarming.tileentity.ModWallSignBlock;
+import com.tamsynnimogen.netherfarming.tileentity.ModWoodType;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -72,12 +74,6 @@ public class ModBlocks
                    .zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT), () -> {
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
-/*
-    private static final BlockSubRegistryHelper HELPER = NetherFarming.REGISTRY_HELPER.getBlockSubHelper();
-
-
-    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>, RegistryObject<AbnormalsWallSignBlock>> SIGNS = HELPER.createSignBlock("test", MaterialColor.PINK);
-*/
 
     public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
@@ -91,6 +87,10 @@ public class ModBlocks
                             .hardnessAndResistance(0.5f,2.0f)
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
+
+    public static final Block BLOODBARK_SIGN = register("dark_oak_sign", new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), ModWoodType.BLOODBARK));
+
+    public static final Block BLOODBARK_WALL_SIGN = register("dark_oak_wall_sign", new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(BLOODBARK_SIGN), ModWoodType.BLOODBARK));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",
