@@ -33,6 +33,7 @@ public class ModSignTileEntity extends TileEntity {
    private DyeColor textColor = DyeColor.BLACK;
 
    public ModSignTileEntity() {
+
       super(ModTileEntities.SIGN);
    }
 
@@ -91,10 +92,7 @@ public class ModSignTileEntity extends TileEntity {
       return this.renderText[row];
    }
 
-   /**
-    * Retrieves packet to send to the client whenever this Tile Entity is resynced via World.notifyBlockUpdate. For
-    * modded TE's, this packet comes back to you clientside in {@link #onDataPacket}
-    */
+
    @Nullable
    public SUpdateTileEntityPacket getUpdatePacket() {
       return new SUpdateTileEntityPacket(this.pos, 9, this.getUpdateTag());
@@ -112,9 +110,7 @@ public class ModSignTileEntity extends TileEntity {
       return this.isEditable;
    }
 
-   /**
-    * Sets the sign's isEditable flag to the specified parameter.
-    */
+
    @OnlyIn(Dist.CLIENT)
    public void setEditable(boolean isEditableIn) {
       this.isEditable = isEditableIn;

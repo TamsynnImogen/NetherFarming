@@ -30,9 +30,7 @@ public class ModWallSignBlock extends ModAbstractSignBlock {
       this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(WATERLOGGED, Boolean.valueOf(false)));
    }
 
-   /**
-    * Returns the unlocalized name of the block with "tile." appended to the front.
-    */
+
    public String getTranslationKey() {
       return this.asItem().getTranslationKey();
    }
@@ -66,12 +64,7 @@ public class ModWallSignBlock extends ModAbstractSignBlock {
       return null;
    }
 
-   /**
-    * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-    * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-    * returns its solidified counterpart.
-    * Note that this method should ideally consider only the specific face passed in.
-    */
+
    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
       return facing.getOpposite() == stateIn.get(FACING) && !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
    }
@@ -88,4 +81,5 @@ public class ModWallSignBlock extends ModAbstractSignBlock {
    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
       builder.add(FACING, WATERLOGGED);
    }
+
 }

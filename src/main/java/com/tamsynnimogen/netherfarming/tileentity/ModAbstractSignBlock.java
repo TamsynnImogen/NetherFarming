@@ -24,6 +24,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public abstract class ModAbstractSignBlock extends ContainerBlock implements IWaterLoggable {
+
    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
    protected static final VoxelShape SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
    private final ModWoodType woodType;
@@ -33,12 +34,7 @@ public abstract class ModAbstractSignBlock extends ContainerBlock implements IWa
       this.woodType = woodTypeIn;
    }
 
-   /**
-    * Update the provided state given the provided neighbor facing and neighbor state, returning a new state.
-    * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
-    * returns its solidified counterpart.
-    * Note that this method should ideally consider only the specific face passed in.
-    */
+
    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
       if (stateIn.get(WATERLOGGED)) {
          worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
@@ -51,9 +47,7 @@ public abstract class ModAbstractSignBlock extends ContainerBlock implements IWa
       return SHAPE;
    }
 
-   /**
-    * Return true if an entity can be spawned inside the block (used to get the player's bed spawn location)
-    */
+
    public boolean canSpawnInBlock() {
       return true;
    }
@@ -93,4 +87,5 @@ public abstract class ModAbstractSignBlock extends ContainerBlock implements IWa
    public ModWoodType getWoodType() {
       return this.woodType;
    }
+
 }

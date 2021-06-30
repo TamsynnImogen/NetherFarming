@@ -50,4 +50,5 @@ public class ModStandingSignBlock extends ModAbstractSignBlock {
    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
       builder.add(ROTATION, WATERLOGGED);
    }
+
 }
