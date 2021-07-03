@@ -7,48 +7,29 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
-public class ModStandingSignBlock extends StandingSignBlock {
-   public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_0_15;
+public class ModStandingSignBlock extends StandingSignBlock implements IModSign {
 
-   public ModStandingSignBlock(AbstractBlock.Properties properties, WoodType type) {
-      super(properties, type);
-      this.setDefaultState(this.stateContainer.getBaseState().with(ROTATION, Integer.valueOf(0)).with(WATERLOGGED, Boolean.valueOf(false)));
+   public ModStandingSignBlock(Properties properties, WoodType woodType) {
+      super(properties, woodType);
    }
 
-   public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-      return worldIn.getBlockState(pos.down()).getMaterial().isSolid();
+   @Override
+   public boolean hasTileEntity(BlockState state) {
+      return true;
    }
 
-   public BlockState getStateForPlacement(BlockItemUseContext context) {
-      FluidState fluidstate = context.getWorld().getFluidState(context.getPos());
-      return this.getDefaultState().with(ROTATION, Integer.valueOf(MathHelper.floor((double)((180.0F + context.getPlacementYaw()) * 16.0F / 360.0F) + 0.5D) & 15)).with(WATERLOGGED, Boolean.valueOf(fluidstate.getFluid() == Fluids.WATER));
+   @Override
+   public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+      return ModTileEntities.SIGN.get().create();
    }
-
-
-   public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-      return facing == Direction.DOWN && !this.isValidPosition(stateIn, worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
-   }
-
-
-   public BlockState rotate(BlockState state, Rotation rot) {
-      return state.with(ROTATION, Integer.valueOf(rot.rotate(state.get(ROTATION), 16)));
-   }
-
-
-   public BlockState mirror(BlockState state, Mirror mirrorIn) {
-      return state.with(ROTATION, Integer.valueOf(mirrorIn.mirrorRotation(state.get(ROTATION), 16)));
-   }
-
-   protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-      builder.add(ROTATION, WATERLOGGED);
-   }
-
 }
