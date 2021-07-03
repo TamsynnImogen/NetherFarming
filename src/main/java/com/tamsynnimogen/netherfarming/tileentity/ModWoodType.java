@@ -1,34 +1,16 @@
 package com.tamsynnimogen.netherfarming.tileentity;
 
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
+import net.minecraft.block.WoodType;
+
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class ModWoodType {
-   private static final Set<ModWoodType> VALUES = new ObjectArraySet<>();
-   public static final ModWoodType BLOODBARK = register(new ModWoodType("bloodbark"));
+public class ModWoodType extends WoodType {
 
-   private final String name;
+    public static final WoodType BLOODBARK = new ModWoodType("bloodbark");
 
-   protected ModWoodType(String nameIn) {
-      this.name = nameIn;
-   }
-
-   public static ModWoodType register(ModWoodType woodTypeIn) {
-      VALUES.add(woodTypeIn);
-      return woodTypeIn;
-   }
-
-   public static Stream<ModWoodType> getValues() {
-      return VALUES.stream();
-   }
-
-   public String getName() {
-      return this.name;
-   }
-
-   public static ModWoodType create(String name) {
-      return new ModWoodType(name);
-   }
-
+    protected ModWoodType(String name) {
+        super(name);
+    }
 }

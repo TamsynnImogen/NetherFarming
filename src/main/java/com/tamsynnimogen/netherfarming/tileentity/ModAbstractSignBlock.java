@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public abstract class ModAbstractSignBlock extends ContainerBlock implements IWaterLoggable {
+public abstract class ModAbstractSignBlock {/* extends ContainerBlock implements IWaterLoggable {
 
    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
    protected static final VoxelShape SHAPE = Block.makeCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
@@ -87,5 +87,5 @@ public abstract class ModAbstractSignBlock extends ContainerBlock implements IWa
    public ModWoodType getWoodType() {
       return this.woodType;
    }
-
+*/
 }

@@ -88,11 +88,22 @@ public class ModBlocks
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
 
-   public static final Block BLOODBARK_SIGN = register("bloodbark_sign", new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), ModWoodType.BLOODBARK));
-  // public static final Block BLOODBARK_SIGN = register("bloodbark_sign", new StandingSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_SIGN)));
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            Registration.BLOCKS.register("bloodbark_sign",
+                    () -> new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get()
+                            .getMaterialColor())
+                            .doesNotBlockMovement()
+                            .hardnessAndResistance(1.0F)
+                            .sound(SoundType.WOOD), ModWoodType.BLOODBARK));
 
-    public static final Block BLOODBARK_WALL_SIGN = register("bloodbark_wall_sign", new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(BLOODBARK_SIGN), ModWoodType.BLOODBARK));
-   // public static final Block BLOODBARK_WALL_SIGN = register("bloodbark_wall_sign", new WallSignBlock(AbstractBlock.Properties.from(Blocks.DARK_OAK_WALL_SIGN)));
+    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
+            Registration.BLOCKS.register("bloodbark_wall_sign",
+                    () -> new WallSignBlock(AbstractBlock.Properties.create(Material.WOOD, BLOODBARK_STEM.get()
+                            .getMaterialColor())
+                            .doesNotBlockMovement()
+                            .hardnessAndResistance(1.0F)
+                            .sound(SoundType.WOOD)
+                            .lootFrom(BLOODBARK_SIGN), ModWoodType.BLOODBARK));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",

@@ -15,10 +15,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
-public class ModStandingSignBlock extends ModAbstractSignBlock {
+public class ModStandingSignBlock extends StandingSignBlock {
    public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_0_15;
 
-   public ModStandingSignBlock(AbstractBlock.Properties properties, ModWoodType type) {
+   public ModStandingSignBlock(AbstractBlock.Properties properties, WoodType type) {
       super(properties, type);
       this.setDefaultState(this.stateContainer.getBaseState().with(ROTATION, Integer.valueOf(0)).with(WATERLOGGED, Boolean.valueOf(false)));
    }
