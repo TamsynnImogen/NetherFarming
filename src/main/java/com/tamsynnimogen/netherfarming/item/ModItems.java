@@ -33,14 +33,6 @@ public class ModItems
             Registration.ITEMS.register("cinder_hay_block",
                     () -> new BlockNamedItem(ModBlocks.CINDER_HAY_BLOCK.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
 
-    public static final RegistryObject<Item> BLOODBARK_SIGN =
-            Registration.ITEMS.register("bloodbark_sign",
-                    () -> new BlockNamedItem(ModBlocks.BLOODBARK_SIGN.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
-
-    public static final RegistryObject<Item> BLOODBARK_WALL_SIGN =
-            Registration.ITEMS.register("bloodbark_wall_sign",
-                    () -> new BlockNamedItem(ModBlocks.BLOODBARK_WALL_SIGN.get(), (new Item.Properties()).group(NetherFarming.CREATIVETAB)));
-
     public static final RegistryObject<Item> CINDER_BREAD =
             Registration.ITEMS.register("cinder_bread",
                     () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.CINDER_BREAD)));
