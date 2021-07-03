@@ -22,9 +22,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod(CustomSignsTest.MOD_ID)
+//@Mod(CustomSignsTest.MOD_ID)
 public class CustomSignsTest
-{
+{/*
     public static final boolean ENABLE = true;
     public static final String MOD_ID = "netherfarming";
 
@@ -117,4 +117,5 @@ public class CustomSignsTest
             return CUSTOM_SIGN.get();
         }
     }
+    */
 }
