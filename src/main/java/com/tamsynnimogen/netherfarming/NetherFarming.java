@@ -104,8 +104,6 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_SOUL_ROOTS.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_BLOODBARK_FUNGUS.get(), RenderType.getCutout());
 
-
-
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

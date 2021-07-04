@@ -1,12 +1,12 @@
 package com.tamsynnimogen.netherfarming.block;
 
-import com.tamsynnimogen.netherfarming.NetherFarming;
-import com.tamsynnimogen.netherfarming.tileentity.ModTileEntities;
+import com.tamsynnimogen.netherfarming.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SignItem;
 import net.minecraft.tileentity.SignTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -23,26 +23,25 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-//@Mod(NetherFarming.MOD_ID)
-public class ModSignBlock
+//@Mod(CustomSignsTest.MOD_ID)
+public class CustomSignsTest
 {/*
     public static final boolean ENABLE = true;
     public static final String MOD_ID = "netherfarming";
 
-    public static final WoodType BLOODBARK = WoodType.create(new ResourceLocation(MOD_ID, "bloodbark").toString());
-
+    public static final WoodType TEST_WOOD_TYPE = WoodType.create(new ResourceLocation(MOD_ID, "test").toString());
 
     private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
-    public static final RegistryObject<CustomStandingSignBlock> BLOODBARK_STANDING_SIGN = BLOCKS.register("bloodbark_sign", () -> new CustomStandingSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), ModSignBlock.BLOODBARK));
-    public static final RegistryObject<CustomWallSignBlock> BLOODBARK_WALL_SIGN = BLOCKS.register("bloodbark_wall_sign", () -> new CustomWallSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), ModSignBlock.BLOODBARK));
+    public static final RegistryObject<CustomStandingSignBlock> TEST_STANDING_SIGN = BLOCKS.register("test_sign", () -> new CustomStandingSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), CustomSignsTest.TEST_WOOD_TYPE));
+    public static final RegistryObject<CustomWallSignBlock> TEST_WALL_SIGN = BLOCKS.register("test_wall_sign", () -> new CustomWallSignBlock(Block.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), CustomSignsTest.TEST_WOOD_TYPE));
 
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
-    public static final RegistryObject<SignItem> BLOODBARK_SIGN = ITEMS.register("bloodbark_sign", () -> new SignItem((new Item.Properties()).maxStackSize(16).group(NetherFarming.CREATIVETAB), BLOODBARK_STANDING_SIGN.get(), BLOODBARK_WALL_SIGN.get()));
+    public static final RegistryObject<SignItem> TEST_SIGN = ITEMS.register("test_sign", () -> new SignItem((new Item.Properties()).maxStackSize(16).group(ItemGroup.DECORATIONS), TEST_STANDING_SIGN.get(), TEST_WALL_SIGN.get()));
 
     private static final DeferredRegister<TileEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MOD_ID);
-    public static final RegistryObject<TileEntityType<CustomSignTileEntity>> BLOODBARK_SIGN_TILE = TILE_ENTITIES.register("bloodbark_sign_tile", () -> TileEntityType.Builder.create(CustomSignTileEntity::new, BLOODBARK_WALL_SIGN.get(), BLOODBARK_STANDING_SIGN.get()).build(null));
+    public static final RegistryObject<TileEntityType<CustomSignTileEntity>> CUSTOM_SIGN = TILE_ENTITIES.register("custom_sign", () -> TileEntityType.Builder.create(CustomSignTileEntity::new, TEST_WALL_SIGN.get(), TEST_STANDING_SIGN.get()).build(null));
 
-    public ModSignBlock()
+    public CustomSignsTest()
     {
         if (ENABLE)
         {
@@ -51,22 +50,22 @@ public class ModSignBlock
             ITEMS.register(eventBus);
             TILE_ENTITIES.register(eventBus);
 
-           eventBus.addListener(this::doClientStuff);
-            eventBus.addListener(this::setup);
+            eventBus.addListener(this::clientSetup);
+            eventBus.addListener(this::commonSetup);
         }
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event)
+    private void clientSetup(final FMLClientSetupEvent event)
     {
-        ClientRegistry.bindTileEntityRenderer(BLOODBARK_SIGN_TILE.get(), SignTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(CUSTOM_SIGN.get(), SignTileEntityRenderer::new);
         event.enqueueWork(() -> {
-           Atlases.addWoodType(BLOODBARK);
+           Atlases.addWoodType(TEST_WOOD_TYPE);
         });
     }
 
-    private void setup(final FMLCommonSetupEvent event)
+    private void commonSetup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork(() -> WoodType.register(BLOODBARK));
+        event.enqueueWork(() -> WoodType.register(TEST_WOOD_TYPE));
     }
 
     public static class CustomStandingSignBlock extends StandingSignBlock
@@ -116,8 +115,8 @@ public class ModSignBlock
         @Override
         public TileEntityType<CustomSignTileEntity> getType()
         {
-            return BLOODBARK_SIGN_TILE.get();
+            return CUSTOM_SIGN.get();
         }
     }
-*/
+    */
 }
