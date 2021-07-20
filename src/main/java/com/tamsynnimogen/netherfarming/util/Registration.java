@@ -26,6 +26,7 @@ public class Registration
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
+        TILE_ENTITY_TYPES.register(eventBus);
     }
 
 }

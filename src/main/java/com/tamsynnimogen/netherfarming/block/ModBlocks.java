@@ -72,6 +72,14 @@ public class ModBlocks
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
 
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            Registration.BLOCKS.register("bloodbark_sign", () ->
+                    new ModStandingSign(AbstractBlock.Properties.from(Blocks.DARK_OAK_SIGN), WoodType.DARK_OAK));
+
+    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
+            Registration.BLOCKS.register("bloodbark_wall_sign",
+                    () -> new ModWallSign(AbstractBlock.Properties.from(Blocks.DARK_OAK_WALL_SIGN), WoodType.DARK_OAK));
+
     public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
@@ -103,15 +111,15 @@ public class ModBlocks
             Registration.BLOCKS.register("glowberry_crop",
                     () -> new GlowberryCrop(AbstractBlock.Properties.from(Blocks.WHEAT).setLightLevel((state) -> { return 14;})));
 
-    public static final RegistryObject<Block> POTTED_SOUL_ROOTS =
-            Registration.BLOCKS.register("potted_soul_roots",
-                    () -> new FlowerPotBlock(SOUL_ROOTS.get(), AbstractBlock.Properties.from(Blocks.FLOWER_POT)));
-
     public static final RegistryObject<Block> POTTED_BLOODBARK_FUNGUS =
-            Registration.BLOCKS.register("potted_bloodbark_fungus",
-                    () -> new FlowerPotBlock(BLOODBARK_FUNGUS.get(), AbstractBlock.Properties.from(Blocks.FLOWER_POT)));
+            register("potted_bloodbark_fungus", () -> new FlowerPotBlock(ModBlocks.BLOODBARK_FUNGUS.get(), AbstractBlock
+                    .Properties.from(Blocks.POTTED_CRIMSON_FUNGUS)));
 
-    public static final RegistryObject<Block> GLOOM_SQUASH =
+    public static final RegistryObject<Block> POTTED_SOUL_ROOTS =
+            register("potted_soul_roots", () -> new FlowerPotBlock(ModBlocks.SOUL_ROOTS.get(), AbstractBlock
+                    .Properties.from(Blocks.POTTED_CRIMSON_ROOTS)));
+
+        public static final RegistryObject<Block> GLOOM_SQUASH =
             register("gloom_squash",
                     () -> new GloomSquashBlock(AbstractBlock.Properties.create(Material.GOURD,
                             MaterialColor.BLUE)

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "netherfarming:block/bloodbark_sign"
+    "layer0": "netherfarming:item/bloodbark_sign"
   }
 }

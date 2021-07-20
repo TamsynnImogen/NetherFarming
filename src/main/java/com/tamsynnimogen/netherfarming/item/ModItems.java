@@ -57,6 +57,11 @@ public class ModItems
             Registration.ITEMS.register("cooked_gloom_squash",
                     () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.COOKED_GLOOM_SQUASH)));
 
+    public static final RegistryObject<Item> BLOODBARK_SIGN_ITEM =
+            Registration.ITEMS.register("bloodbark_sign",
+                    () -> new SignItem(new Item.Properties().group(NetherFarming.CREATIVETAB), ModBlocks.BLOODBARK_SIGN.get(),
+                            ModBlocks.BLOODBARK_WALL_SIGN.get()));
+
     public static void register() { }
 
 }

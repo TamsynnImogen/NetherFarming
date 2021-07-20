@@ -3,18 +3,21 @@ package com.tamsynnimogen.netherfarming;
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
 import com.tamsynnimogen.netherfarming.events.ModEvents;
 import com.tamsynnimogen.netherfarming.item.ModItems;
+import com.tamsynnimogen.netherfarming.tileentity.ModTileEntitites;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -49,6 +52,8 @@ public class NetherFarming
         Registration.register();
         ModItems.register();
         ModBlocks.register();
+
+        ModTileEntitites.register();
 
         // register mod events
         MinecraftForge.EVENT_BUS.register(new ModEvents());
@@ -104,8 +109,9 @@ public class NetherFarming
         RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_SOUL_ROOTS.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_BLOODBARK_FUNGUS.get(), RenderType.getCutout());
 
-
-
+        event.enqueueWork(() -> {
+            ClientRegistry.bindTileEntityRenderer(ModTileEntitites.SIGN_TILE_ENTITIES.get(), SignTileEntityRenderer::new);
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
