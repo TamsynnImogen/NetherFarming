@@ -72,14 +72,6 @@ public class ModBlocks
                return ModFeatures.BLOODBARK_FUNGUS_PLANTED;
            }));
 
-    public static final RegistryObject<Block> BLOODBARK_SIGN =
-            Registration.BLOCKS.register("bloodbark_sign", () ->
-                    new ModStandingSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_PLANKS.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.CRIMSON));
-
-    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
-            Registration.BLOCKS.register("bloodbark_wall_sign",
-                    () -> new ModWallSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_PLANKS.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.CRIMSON));
-
     public static final RegistryObject<Block> BLOODBARK_TRAPDOOR =
         register("bloodbark_trapdoor", () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).notSolid()));
 
@@ -92,6 +84,14 @@ public class ModBlocks
                             .hardnessAndResistance(0.5f,2.0f)
                             .harvestTool(ToolType.AXE)
                             .harvestLevel(0)));
+
+    public static final RegistryObject<Block> BLOODBARK_SIGN =
+            Registration.BLOCKS.register("bloodbark_sign", () ->
+                    new ModStandingSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.CRIMSON));
+
+    public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
+            Registration.BLOCKS.register("bloodbark_wall_sign",
+                    () -> new ModWallSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.CRIMSON));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",

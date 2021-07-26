@@ -2,21 +2,17 @@ package com.tamsynnimogen.netherfarming;
 
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
 import com.tamsynnimogen.netherfarming.events.ModEvents;
-import com.tamsynnimogen.netherfarming.events.SignManager;
 import com.tamsynnimogen.netherfarming.item.ModItems;
 import com.tamsynnimogen.netherfarming.tileentity.ModTileEntitites;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
-import net.minecraft.block.WoodType;
-import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -119,7 +115,6 @@ public class NetherFarming
         event.enqueueWork(() -> {
             ClientRegistry.bindTileEntityRenderer(ModTileEntitites.SIGN_TILE_ENTITIES.get(), SignTileEntityRenderer::new);
         });
-        event.enqueueWork(SignManager::setupAtlas);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
