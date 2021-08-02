@@ -3,7 +3,8 @@
   "group": "wooden_stairs",
   "pattern": [
     "#",
-    "H"
+    "H",
+    "B"
   ],
   "key": {
     "#": {
@@ -11,10 +12,13 @@
     },
     "H": {
       "item": "netherfarming:hellkin"
-    }
-  },
+    },
+  "B": {
+    "item": "minecraft:bowl"
+  }
+},
   "result": {
     "item": "netherfarming:hellkin_blood_curry",
-    "count": 2
+    "count": 1
   }
 }

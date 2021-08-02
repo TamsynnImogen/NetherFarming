@@ -4,6 +4,7 @@ import com.tamsynnimogen.netherfarming.block.ModBlocks;
 import com.tamsynnimogen.netherfarming.events.ModEvents;
 import com.tamsynnimogen.netherfarming.item.ModItems;
 import com.tamsynnimogen.netherfarming.tileentity.ModTileEntitites;
+import com.tamsynnimogen.netherfarming.util.Config;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -20,14 +21,17 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,6 +56,9 @@ public class NetherFarming
 
     public NetherFarming() {
 
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_CONFIFG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIFG);
+
         Registration.register();
         ModItems.register();
         ModBlocks.register();
@@ -69,6 +76,9 @@ public class NetherFarming
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+
+        Config.loadConfigFile(Config.CLIENT_CONFIFG, FMLPaths.CONFIGDIR.get().resolve("netherfarming-client.toml").toString());
+        Config.loadConfigFile(Config.SERVER_CONFIFG, FMLPaths.CONFIGDIR.get().resolve("netherfarming-server.toml").toString());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

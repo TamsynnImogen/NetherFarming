@@ -2,6 +2,7 @@ package com.tamsynnimogen.netherfarming.events;
 
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
 import com.tamsynnimogen.netherfarming.item.ModItems;
+import com.tamsynnimogen.netherfarming.util.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -32,7 +33,7 @@ public class ModEvents
                 // "delete" one of the held Items
                 player.getHeldItemMainhand().shrink(1);
 
-                target.addPotionEffect(new EffectInstance(Effects.GLOWING, 100));
+                target.addPotionEffect(new EffectInstance(Effects.GLOWING, Config.GLOWBERRY_GLOW_DURATION.get()));
             }
         }
     }

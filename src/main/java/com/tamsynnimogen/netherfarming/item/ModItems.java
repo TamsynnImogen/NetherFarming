@@ -2,6 +2,7 @@ package com.tamsynnimogen.netherfarming.item;
 
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.block.ModBlocks;
+import com.tamsynnimogen.netherfarming.util.Config;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -50,8 +51,8 @@ public class ModItems
                     () -> new BlockNamedItem(ModBlocks.HELLKIN_STEM.get(), new Item.Properties().group(NetherFarming.CREATIVETAB)));
 
     public static final RegistryObject<Item> HELLKIN_BLOOD_CURRY =
-            Registration.ITEMS.register("hellkin_blood_curry",
-                    () -> new Item((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.HELLKIN_BLOOD_CURRY)));
+                Registration.ITEMS.register("hellkin_blood_curry",
+                        () -> new SoupItem((new Item.Properties()).group(NetherFarming.CREATIVETAB).food(ModFood.HELLKIN_BLOOD_CURRY)));
 
     public static final RegistryObject<Item> COOKED_GLOOM_SQUASH =
             Registration.ITEMS.register("cooked_gloom_squash",
