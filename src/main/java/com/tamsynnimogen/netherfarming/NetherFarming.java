@@ -74,7 +74,7 @@ public class NetherFarming
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public static final WoodType BLOODBARK = WoodType.create(new ResourceLocation(MOD_ID, "signs").toString());
+    public static final WoodType BLOODBARK = WoodType.create(new ResourceLocation(MOD_ID, "bloodbark").toString());
 
     private void setup(final FMLCommonSetupEvent event)
     {
