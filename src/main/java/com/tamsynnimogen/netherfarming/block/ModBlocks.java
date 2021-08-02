@@ -3,6 +3,7 @@ package com.tamsynnimogen.netherfarming.block;
 import com.tamsynnimogen.netherfarming.NetherFarming;
 import com.tamsynnimogen.netherfarming.compat.ModStrippedBlock;
 import com.tamsynnimogen.netherfarming.compat.ModTilledBlock;
+import com.tamsynnimogen.netherfarming.compat.ModWoodTypes;
 import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -87,11 +88,11 @@ public class ModBlocks
 
     public static final RegistryObject<Block> BLOODBARK_SIGN =
             Registration.BLOCKS.register("bloodbark_sign", () ->
-                    new ModStandingSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), WoodType.CRIMSON));
+                    new ModStandingSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), ModWoodTypes.BLOODBARK));
 
     public static final RegistryObject<Block> BLOODBARK_WALL_SIGN =
             Registration.BLOCKS.register("bloodbark_wall_sign",
-                    () -> new ModWallSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), WoodType.CRIMSON));
+                    () -> new ModWallSign(AbstractBlock.Properties.create(Material.NETHER_WOOD, ModBlocks.BLOODBARK_STEM.get().getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.BLOODBARK_SIGN.get()), ModWoodTypes.BLOODBARK));
 
     public static final RegistryObject<Block> CINDER_WHEAT_CROP =
             Registration.BLOCKS.register("cinder_wheat_crop",
