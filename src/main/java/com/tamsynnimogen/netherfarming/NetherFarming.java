@@ -8,11 +8,14 @@ import com.tamsynnimogen.netherfarming.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.block.WoodType;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -71,6 +74,7 @@ public class NetherFarming
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    public static final WoodType BLOODBARK = WoodType.create(new ResourceLocation(MOD_ID, "signs").toString());
 
     private void setup(final FMLCommonSetupEvent event)
     {
@@ -92,9 +96,8 @@ public class NetherFarming
             ComposterBlock.CHANCES.put(ModBlocks.BLOODBARK_FUNGUS.get().asItem(), 0.32f);
             ComposterBlock.CHANCES.put(ModBlocks.GLOOM_SQUASH.get().asItem(), 0.32f);
             ComposterBlock.CHANCES.put(ModBlocks.HELLKIN.get().asItem(), 0.32f);
+            WoodType.register(BLOODBARK);
         });
-
-
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)
@@ -114,6 +117,7 @@ public class NetherFarming
 
         event.enqueueWork(() -> {
             ClientRegistry.bindTileEntityRenderer(ModTileEntitites.SIGN_TILE_ENTITIES.get(), SignTileEntityRenderer::new);
+            Atlases.addWoodType(BLOODBARK);
         });
     }
 
